@@ -3,924 +3,797 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HifzConnect</title>
+<meta name="theme-color" content="#006b45">
+<title>HifzConnect - হেফজ গার্ডিয়ান</title>
 
 <style>
 *{
   box-sizing:border-box;
   margin:0;
   padding:0;
-  font-family:Arial,"Noto Sans Bengali",sans-serif;
+  font-family:"Noto Sans Bengali","Arial",sans-serif;
 }
 
 body{
-  background:#f4f7f5;
-  color:#17352a;
+  background:#f4f8f4;
+  color:#173b2c;
 }
 
+.app{
+  max-width:480px;
+  margin:auto;
+  min-height:100vh;
+  background:#f8faf8;
+  padding-bottom:90px;
+}
+
+/* Header */
 .header{
-  background:linear-gradient(135deg,#075e45,#0b8060);
+  background:linear-gradient(145deg,#005c3b,#008457);
   color:white;
-  padding:25px 20px 35px;
-  border-radius:0 0 28px 28px;
+  padding:20px 18px 70px;
+  border-radius:0 0 38px 38px;
+  position:relative;
+  overflow:hidden;
 }
 
-.logo{
+.header:after{
+  content:"☾  ✦";
+  position:absolute;
+  right:20px;
+  bottom:15px;
+  font-size:55px;
+  opacity:.12;
+}
+
+.top{
   display:flex;
   align-items:center;
-  gap:12px;
+  justify-content:space-between;
 }
 
-.logo-icon{
-  width:52px;
-  height:52px;
-  border-radius:16px;
-  background:white;
-  color:#087653;
+.menu,.bell{
+  font-size:27px;
+  width:45px;
+  height:45px;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:28px;
-  font-weight:bold;
+}
+
+.logo{
+  text-align:center;
+  flex:1;
 }
 
 .logo h1{
-  font-size:25px;
+  font-size:28px;
+  font-weight:800;
+}
+
+.logo h1 span{
+  color:#e5b63c;
 }
 
 .logo p{
-  font-size:13px;
-  opacity:.85;
+  font-size:14px;
   margin-top:3px;
+  color:#f4d77c;
 }
 
-.container{
-  padding:18px;
-  max-width:650px;
-  margin:auto;
-}
-
+/* Welcome Card */
 .welcome{
-  margin-top:-20px;
   background:white;
-  border-radius:20px;
+  margin:-48px 15px 15px;
+  position:relative;
+  border-radius:28px;
   padding:20px;
   box-shadow:0 5px 20px #00000012;
 }
 
 .welcome h2{
-  font-size:20px;
+  color:#006b45;
+  font-size:21px;
   margin-bottom:7px;
 }
 
 .welcome p{
-  color:#65756e;
+  color:#555;
   font-size:14px;
 }
 
+/* Stats */
 .stats{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  margin-top:15px;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  padding:0 15px 15px;
 }
 
 .stat{
-  background:#f0f8f4;
-  border-radius:15px;
-  padding:14px 8px;
-  text-align:center;
+  padding:18px;
+  border-radius:20px;
+  min-height:105px;
+  box-shadow:0 3px 12px #0000000d;
 }
 
-.stat b{
-  display:block;
-  font-size:24px;
-  color:#087653;
+.stat.green{background:#edf8ec}
+.stat.blue{background:#eef6ff}
+.stat.red{background:#fff0ef}
+.stat.yellow{background:#fff8e8}
+
+.stat .icon{
+  font-size:25px;
 }
 
-.stat span{
-  font-size:12px;
-  color:#66746f;
+.stat h3{
+  font-size:14px;
+  margin-top:5px;
+  color:#444;
 }
 
-.section-title{
-  margin:25px 0 12px;
+.stat strong{
+  font-size:27px;
+}
+
+/* Guardian Message */
+.guardian{
+  margin:0 15px 15px;
+  background:#eaf6e9;
+  border-radius:22px;
+  padding:18px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  box-shadow:0 3px 12px #0000000c;
+}
+
+.guardian .bigicon{
+  font-size:38px;
+}
+
+.guardian h2{
+  font-size:18px;
+  color:#006b45;
+}
+
+.guardian p{
+  font-size:13px;
+  margin-top:4px;
+  color:#555;
+}
+
+.guardian button{
+  margin-left:auto;
+  border:0;
+  background:#006b45;
+  color:white;
+  border-radius:12px;
+  padding:10px 13px;
   font-size:18px;
 }
 
+/* Grid */
 .grid{
   display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  padding:0 15px;
 }
 
 .card{
   background:white;
-  border-radius:18px;
-  padding:20px 15px;
-  box-shadow:0 3px 15px #0000000b;
-  cursor:pointer;
-  border:1px solid #e9efec;
+  border-radius:19px;
+  padding:16px 7px;
+  min-height:105px;
+  text-align:center;
+  box-shadow:0 3px 12px #0000000d;
+  border:1px solid #edf1ed;
 }
 
-.card:active{
-  transform:scale(.98);
-}
-
-.card-icon{
-  font-size:28px;
-  margin-bottom:10px;
-}
-
-.card h3{
-  font-size:16px;
-  margin-bottom:5px;
-}
-
-.card p{
-  font-size:12px;
-  color:#74817c;
-}
-
-.btn{
-  border:0;
-  border-radius:12px;
-  padding:12px 16px;
-  cursor:pointer;
-  font-size:15px;
-  font-weight:bold;
-}
-
-.btn-primary{
-  background:#087653;
+.card:first-child{
+  background:#006b45;
   color:white;
 }
 
-.btn-light{
-  background:#edf6f2;
-  color:#087653;
+.card .i{
+  font-size:29px;
+  margin-bottom:8px;
 }
 
-.btn-danger{
-  background:#fff0f0;
-  color:#c0392b;
-}
-
-.page{
-  display:none;
-}
-
-.page.active{
-  display:block;
-}
-
-.topbar{
-  display:flex;
-  align-items:center;
-  gap:12px;
-  margin-bottom:20px;
-}
-
-.back{
-  border:0;
-  background:white;
-  width:42px;
-  height:42px;
-  border-radius:12px;
-  font-size:20px;
-}
-
-.form-box{
-  background:white;
-  padding:20px;
-  border-radius:18px;
-  box-shadow:0 3px 15px #0000000b;
-}
-
-label{
-  display:block;
-  font-size:14px;
-  font-weight:bold;
-  margin:15px 0 7px;
-}
-
-input,textarea,select{
-  width:100%;
-  border:1px solid #dce6e1;
-  border-radius:12px;
-  padding:13px;
-  font-size:15px;
-  outline:none;
-}
-
-textarea{
-  min-height:120px;
-  resize:vertical;
-}
-
-input:focus,textarea:focus{
-  border-color:#087653;
-}
-
-.student{
-  background:white;
-  border-radius:17px;
-  padding:16px;
-  margin-bottom:12px;
-  box-shadow:0 3px 15px #0000000a;
-}
-
-.student-top{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-}
-
-.student-name{
-  font-size:17px;
-  font-weight:bold;
-}
-
-.phone{
-  color:#087653;
+.card h3{
   font-size:13px;
+}
+
+.card p{
+  font-size:11px;
+  color:#777;
   margin-top:4px;
 }
 
-.actions{
+.card:first-child p{
+  color:#d8f2e6;
+}
+
+/* Section */
+.section{
+  padding:20px 15px 5px;
+}
+
+.section-title{
   display:flex;
-  gap:7px;
-  margin-top:12px;
-  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+}
+
+.section-title h2{
+  font-size:19px;
+  color:#173b2c;
+}
+
+.add{
+  background:#006b45;
+  color:white;
+  border:0;
+  border-radius:10px;
+  padding:9px 13px;
+}
+
+/* Student list */
+.student{
+  background:white;
+  border-radius:17px;
+  padding:14px;
+  margin-bottom:10px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  box-shadow:0 3px 10px #0000000a;
+}
+
+.avatar{
+  width:45px;
+  height:45px;
+  background:#e8f5e9;
+  color:#006b45;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:21px;
+}
+
+.student-info{
+  flex:1;
+}
+
+.student-info strong{
+  display:block;
+}
+
+.student-info small{
+  color:#777;
+}
+
+.call{
+  background:#e9f7ef;
+  border:0;
+  border-radius:10px;
+  padding:9px;
+  font-size:18px;
+}
+
+/* Bottom navigation */
+.bottom{
+  position:fixed;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(480px,100%);
+  height:78px;
+  background:#005c3b;
+  border-radius:28px 28px 0 0;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  color:white;
+  box-shadow:0 -4px 20px #00000018;
+}
+
+.nav{
+  text-align:center;
+  font-size:12px;
+  opacity:.85;
+}
+
+.nav .ni{
+  font-size:24px;
+  display:block;
+  margin-bottom:3px;
+}
+
+.nav.active{
+  color:#f3c64e;
+  opacity:1;
+}
+
+/* Modal */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#00000066;
+  z-index:10;
+  align-items:flex-end;
+  justify-content:center;
+}
+
+.modal-box{
+  width:min(480px,100%);
+  background:white;
+  padding:24px;
+  border-radius:28px 28px 0 0;
+}
+
+.modal-box h2{
+  margin-bottom:15px;
+}
+
+input,textarea{
+  width:100%;
+  padding:13px;
+  border:1px solid #ddd;
+  border-radius:12px;
+  margin-bottom:10px;
+  font-size:15px;
+}
+
+textarea{
+  min-height:100px;
+}
+
+.save{
+  width:100%;
+  background:#006b45;
+  color:white;
+  border:0;
+  padding:14px;
+  border-radius:12px;
+  font-size:16px;
+}
+
+.close{
+  width:100%;
+  margin-top:8px;
+  padding:12px;
+  border:0;
+  background:#eee;
+  border-radius:12px;
 }
 
 .empty{
   text-align:center;
-  padding:40px 15px;
-  color:#718078;
-}
-
-.notice{
-  background:#fff9e8;
-  border-left:4px solid #e4ad32;
-  padding:14px;
-  border-radius:10px;
-  margin-bottom:12px;
-  font-size:14px;
-}
-
-.message-box{
-  background:#eaf7f1;
-  padding:15px;
-  border-radius:14px;
-  margin-top:15px;
-  white-space:pre-wrap;
-  font-size:14px;
-}
-
-.footer{
-  text-align:center;
-  padding:30px 10px;
-  color:#82908a;
-  font-size:12px;
+  padding:20px;
+  color:#888;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HOME -->
-<div id="home" class="page active">
+<div class="app">
 
-<header class="header">
-  <div class="logo">
-    <div class="logo-icon">ح</div>
-    <div>
-      <h1>HifzConnect</h1>
-      <p>হেফজ মাদ্রাসা Guardian যোগাযোগ</p>
+  <!-- HEADER -->
+  <div class="header">
+    <div class="top">
+      <div class="menu">☰</div>
+
+      <div class="logo">
+        <h1>Hifz<span>Connect</span></h1>
+        <p>— হেফজ গার্ডিয়ান —</p>
+      </div>
+
+      <div class="bell">♧</div>
     </div>
   </div>
-</header>
 
-<main class="container">
-
+  <!-- WELCOME -->
   <div class="welcome">
-    <h2>আসসালামু আলাইকুম 🌙</h2>
-    <p>আপনার হেফজ বিভাগের শিক্ষার্থীদের তথ্য ও Guardian যোগাযোগ সহজে পরিচালনা করুন।</p>
-
-    <div class="stats">
-      <div class="stat">
-        <b id="totalStudents">0</b>
-        <span>শিক্ষার্থী</span>
-      </div>
-
-      <div class="stat">
-        <b id="totalGuardians">0</b>
-        <span>Guardian</span>
-      </div>
-
-      <div class="stat">
-        <b id="presentCount">0</b>
-        <span>আজ উপস্থিত</span>
-      </div>
-    </div>
+    <h2>আসসালামু আলাইকুম</h2>
+    <p>উস্তাদ মোহাম্মদ সালমান</p>
+    <br>
+    <p>📅 আজকের তারিখ: <span id="date"></span></p>
   </div>
 
-  <h2 class="section-title">দ্রুত কাজ</h2>
+  <!-- STATS -->
+  <div class="stats">
 
+    <div class="stat green">
+      <div class="icon">👥</div>
+      <h3>মোট শিক্ষার্থী</h3>
+      <strong id="total">0</strong>
+    </div>
+
+    <div class="stat blue">
+      <div class="icon">✅</div>
+      <h3>আজ উপস্থিত</h3>
+      <strong id="present">0</strong>
+    </div>
+
+    <div class="stat red">
+      <div class="icon">❌</div>
+      <h3>অনুপস্থিত</h3>
+      <strong id="absent">0</strong>
+    </div>
+
+    <div class="stat yellow">
+      <div class="icon">📖</div>
+      <h3>আজ পড়া শুনেছে</h3>
+      <strong id="lesson">0</strong>
+    </div>
+
+  </div>
+
+  <!-- GUARDIAN MESSAGE -->
+  <div class="guardian">
+    <div class="bigicon">📢</div>
+
+    <div>
+      <h2>Guardian Message</h2>
+      <p>এক ক্লিকে সকল অভিভাবকের কাছে বার্তা পাঠান</p>
+    </div>
+
+    <button onclick="messageGuardians()">➤</button>
+  </div>
+
+  <!-- MAIN GRID -->
   <div class="grid">
 
-    <div class="card" onclick="showPage('students')">
-      <div class="card-icon">👨‍🎓</div>
-      <h3>শিক্ষার্থী</h3>
-      <p>শিক্ষার্থী ও Guardian তথ্য</p>
+    <div class="card" onclick="showStudents()">
+      <div class="i">👥</div>
+      <h3>শিক্ষার্থীদের তালিকা</h3>
+      <p>সব শিক্ষার্থীর তথ্য</p>
     </div>
 
-    <div class="card" onclick="showPage('message')">
-      <div class="card-icon">📢</div>
-      <h3>Guardian বার্তা</h3>
-      <p>দ্রুত বার্তা তৈরি করুন</p>
+    <div class="card" onclick="openStudent()">
+      <div class="i">👤+</div>
+      <h3>ছাত্র যোগ করুন</h3>
+      <p>নতুন ছাত্র যোগ</p>
     </div>
 
-    <div class="card" onclick="showPage('attendance')">
-      <div class="card-icon">✅</div>
+    <div class="card" onclick="messageGuardians()">
+      <div class="i">➤</div>
+      <h3>বার্তা পাঠান</h3>
+      <p>Guardian-দের</p>
+    </div>
+
+    <div class="card">
+      <div class="i">📋</div>
       <h3>উপস্থিতি</h3>
-      <p>আজকের উপস্থিতি রাখুন</p>
+      <p>দৈনিক উপস্থিতি</p>
     </div>
 
-    <div class="card" onclick="showPage('progress')">
-      <div class="card-icon">📖</div>
-      <h3>হিফজ অগ্রগতি</h3>
-      <p>পড়ার অগ্রগতি দেখুন</p>
+    <div class="card">
+      <div class="i">📈</div>
+      <h3>পড়ার অগ্রগতি</h3>
+      <p>সবক ও আমুখতা</p>
+    </div>
+
+    <div class="card">
+      <div class="i">📅</div>
+      <h3>ক্যালেন্ডার</h3>
+      <p>পরীক্ষা ও অনুষ্ঠান</p>
+    </div>
+
+    <div class="card">
+      <div class="i">👨‍👩‍👦</div>
+      <h3>অভিভাবক মিটিং</h3>
+      <p>মিটিং ও আলোচনা</p>
+    </div>
+
+    <div class="card">
+      <div class="i">📖</div>
+      <h3>ইসলামিক বিভাগ</h3>
+      <p>দোয়া, হাদিস, আয়াত</p>
+    </div>
+
+    <div class="card">
+      <div class="i">•••</div>
+      <h3>আরও</h3>
+      <p>সেটিংস ও অন্যান্য</p>
     </div>
 
   </div>
 
-  <h2 class="section-title">নোটিশ</h2>
+  <!-- STUDENT SECTION -->
+  <div class="section" id="studentSection">
 
-  <div class="notice">
-    📌 HifzConnect-এর মাধ্যমে শিক্ষার্থীদের Guardian-এর সাথে সহজে যোগাযোগ করুন।
+    <div class="section-title">
+      <h2>শিক্ষার্থীদের তালিকা</h2>
+      <button class="add" onclick="openStudent()">＋ যোগ</button>
+    </div>
+
+    <div id="studentList"></div>
+
   </div>
 
-  <div class="footer">
-    HifzConnect • Bismillah দিয়ে শুরু করি 🤲
-  </div>
-
-</main>
 </div>
 
+<!-- BOTTOM NAV -->
+<div class="bottom">
 
-<!-- STUDENTS -->
-<div id="students" class="page">
-
-<main class="container">
-
-  <div class="topbar">
-    <button class="back" onclick="showPage('home')">←</button>
-    <h2>👨‍🎓 শিক্ষার্থী তালিকা</h2>
+  <div class="nav active">
+    <span class="ni">⌂</span>
+    হোম
   </div>
 
-  <button class="btn btn-primary" onclick="showPage('addStudent')" style="width:100%;margin-bottom:15px;">
-    ＋ নতুন শিক্ষার্থী যোগ করুন
-  </button>
+  <div class="nav">
+    <span class="ni">🔔</span>
+    নোটিশ
+  </div>
 
-  <div id="studentList"></div>
+  <div class="nav">
+    <span class="ni">▤</span>
+    রিপোর্ট
+  </div>
 
-</main>
+  <div class="nav">
+    <span class="ni">⚙</span>
+    সেটিংস
+  </div>
+
 </div>
 
+<!-- ADD STUDENT MODAL -->
+<div class="modal" id="studentModal">
 
-<!-- ADD STUDENT -->
-<div id="addStudent" class="page">
+  <div class="modal-box">
 
-<main class="container">
+    <h2>👤 নতুন শিক্ষার্থী যোগ করুন</h2>
 
-  <div class="topbar">
-    <button class="back" onclick="showPage('students')">←</button>
-    <h2>নতুন শিক্ষার্থী</h2>
-  </div>
+    <input id="studentName" placeholder="শিক্ষার্থীর নাম">
 
-  <div class="form-box">
+    <input id="guardianName" placeholder="অভিভাবকের নাম">
 
-    <label>শিক্ষার্থীর নাম</label>
-    <input id="studentName" placeholder="যেমন: মোঃ আব্দুল্লাহ">
+    <input id="guardianPhone" type="tel" placeholder="অভিভাবকের মোবাইল নম্বর">
 
-    <label>Guardian-এর নাম</label>
-    <input id="guardianName" placeholder="যেমন: মোঃ করিম">
+    <button class="save" onclick="saveStudent()">
+      শিক্ষার্থী সংরক্ষণ করুন
+    </button>
 
-    <label>Guardian-এর মোবাইল নম্বর</label>
-    <input id="guardianPhone" type="tel" placeholder="01XXXXXXXXX">
-
-    <label>জামাত / বিভাগ</label>
-    <input id="studentClass" placeholder="যেমন: হিফজ ১ম বিভাগ">
-
-    <label>হিফজ অগ্রগতি</label>
-    <input id="hifzProgress" placeholder="যেমন: ১০ পারা">
-
-    <button class="btn btn-primary" onclick="saveStudent()" style="width:100%;margin-top:20px;">
-      💾 শিক্ষার্থী সংরক্ষণ করুন
+    <button class="close" onclick="closeStudent()">
+      বাতিল
     </button>
 
   </div>
 
-</main>
 </div>
 
+<!-- MESSAGE MODAL -->
+<div class="modal" id="messageModal">
 
-<!-- MESSAGE -->
-<div id="message" class="page">
+  <div class="modal-box">
 
-<main class="container">
+    <h2>📢 Guardian Message</h2>
 
-  <div class="topbar">
-    <button class="back" onclick="showPage('home')">←</button>
-    <h2>📢 Guardian বার্তা</h2>
-  </div>
+    <textarea id="messageText"
+      placeholder="অভিভাবকদের জন্য আপনার বার্তা লিখুন..."></textarea>
 
-  <div class="form-box">
-
-    <label>বার্তার ধরন</label>
-
-    <select id="template" onchange="useTemplate()">
-      <option value="">নিজের বার্তা লিখুন</option>
-      <option value="attendance">উপস্থিতির বার্তা</option>
-      <option value="progress">হিফজ অগ্রগতির বার্তা</option>
-      <option value="meeting">Guardian মিটিং</option>
-      <option value="holiday">ছুটির নোটিশ</option>
-      <option value="general">সাধারণ নোটিশ</option>
-    </select>
-
-    <label>আপনার বার্তা</label>
-
-    <textarea id="messageText" placeholder="এখানে Guardian-এর জন্য বার্তা লিখুন..."></textarea>
-
-    <button class="btn btn-primary" onclick="copyMessage()" style="width:100%;margin-top:15px;">
-      📋 বার্তা কপি করুন
+    <button class="save" onclick="sendMessages()">
+      WhatsApp-এ বার্তা পাঠান
     </button>
 
-    <div class="message-box">
-      <b>Guardian যোগাযোগ:</b><br>
-      নিচে শিক্ষার্থীর তালিকা থেকে WhatsApp/SMS বেছে নিয়ে বার্তা পাঠাতে পারবেন।
-    </div>
+    <button class="close" onclick="closeMessage()">
+      বাতিল
+    </button>
 
   </div>
 
-  <h3 class="section-title">Guardian তালিকা</h3>
-
-  <div id="messageStudents"></div>
-
-</main>
 </div>
-
-
-<!-- ATTENDANCE -->
-<div id="attendance" class="page">
-
-<main class="container">
-
-  <div class="topbar">
-    <button class="back" onclick="showPage('home')">←</button>
-    <h2>✅ আজকের উপস্থিতি</h2>
-  </div>
-
-  <div id="attendanceList"></div>
-
-</main>
-</div>
-
-
-<!-- PROGRESS -->
-<div id="progress" class="page">
-
-<main class="container">
-
-  <div class="topbar">
-    <button class="back" onclick="showPage('home')">←</button>
-    <h2>📖 হিফজ অগ্রগতি</h2>
-  </div>
-
-  <div id="progressList"></div>
-
-</main>
-</div>
-
 
 <script>
 
-let students = JSON.parse(localStorage.getItem("hifzStudents") || "[]");
+let students =
+JSON.parse(localStorage.getItem("hifz_students")) || [];
 
-function saveData(){
-  localStorage.setItem("hifzStudents", JSON.stringify(students));
+/* Date */
+document.getElementById("date").innerText =
+new Date().toLocaleDateString("bn-BD",{
+  year:"numeric",
+  month:"long",
+  day:"numeric",
+  weekday:"long"
+});
+
+/* Open student */
+function openStudent(){
+  document.getElementById("studentModal").style.display="flex";
 }
 
-function showPage(id){
-
-  document.querySelectorAll(".page").forEach(page=>{
-    page.classList.remove("active");
-  });
-
-  document.getElementById(id).classList.add("active");
-
-  if(id==="students") renderStudents();
-  if(id==="message") renderMessageStudents();
-  if(id==="attendance") renderAttendance();
-  if(id==="progress") renderProgress();
-
-  window.scrollTo(0,0);
+function closeStudent(){
+  document.getElementById("studentModal").style.display="none";
 }
 
+/* Save student */
 function saveStudent(){
 
-  const name = document.getElementById("studentName").value.trim();
-  const guardian = document.getElementById("guardianName").value.trim();
-  const phone = document.getElementById("guardianPhone").value.trim();
-  const studentClass = document.getElementById("studentClass").value.trim();
-  const progress = document.getElementById("hifzProgress").value.trim();
+  let name =
+  document.getElementById("studentName").value.trim();
+
+  let guardian =
+  document.getElementById("guardianName").value.trim();
+
+  let phone =
+  document.getElementById("guardianPhone").value.trim();
 
   if(!name || !phone){
-    alert("শিক্ষার্থীর নাম এবং Guardian-এর মোবাইল নম্বর দিন।");
+    alert("শিক্ষার্থীর নাম ও অভিভাবকের মোবাইল নম্বর দিন।");
     return;
   }
 
   students.push({
-    id:Date.now(),
     name:name,
     guardian:guardian,
-    phone:phone,
-    studentClass:studentClass,
-    progress:progress,
-    present:false
+    phone:phone
   });
 
-  saveData();
+  localStorage.setItem(
+    "hifz_students",
+    JSON.stringify(students)
+  );
 
   document.getElementById("studentName").value="";
   document.getElementById("guardianName").value="";
   document.getElementById("guardianPhone").value="";
-  document.getElementById("studentClass").value="";
-  document.getElementById("hifzProgress").value="";
+
+  closeStudent();
+  renderStudents();
 
   alert("শিক্ষার্থী সফলভাবে সংরক্ষণ হয়েছে।");
-  showPage("students");
 }
 
+/* Show students */
 function renderStudents(){
 
-  const box=document.getElementById("studentList");
+  document.getElementById("total").innerText =
+  students.length;
+
+  let list =
+  document.getElementById("studentList");
 
   if(students.length===0){
-    box.innerHTML='<div class="empty">👨‍🎓<br><br>এখনো কোনো শিক্ষার্থী যোগ করা হয়নি।</div>';
-    updateStats();
+
+    list.innerHTML =
+    '<div class="empty">এখনো কোনো শিক্ষার্থী যোগ করা হয়নি।<br>উপরে ＋ যোগ করুন চাপুন।</div>';
+
     return;
   }
 
-  box.innerHTML=students.map(s=>`
+  list.innerHTML="";
 
-    <div class="student">
+  students.forEach((s,index)=>{
 
-      <div class="student-top">
+    let item=document.createElement("div");
 
-        <div>
-          <div class="student-name">${escapeHtml(s.name)}</div>
-          <div class="phone">
-            👤 ${escapeHtml(s.guardian || "Guardian")}<br>
-            📞 ${escapeHtml(s.phone)}
-          </div>
-        </div>
+    item.className="student";
 
+    item.innerHTML=`
+
+      <div class="avatar">👤</div>
+
+      <div class="student-info">
+        <strong>${s.name}</strong>
+        <small>${s.guardian || "অভিভাবক"} • ${s.phone}</small>
       </div>
 
-      <div style="font-size:13px;margin-top:10px;color:#65756e;">
-        📚 ${escapeHtml(s.studentClass || "বিভাগ দেওয়া হয়নি")}
-        &nbsp; • &nbsp;
-        📖 ${escapeHtml(s.progress || "অগ্রগতি দেওয়া হয়নি")}
-      </div>
+      <button class="call"
+        onclick="callGuardian('${s.phone}')">
+        📞
+      </button>
 
-      <div class="actions">
+    `;
 
-        <button class="btn btn-light" onclick="callGuardian('${s.phone}')">
-          📞 কল
-        </button>
+    list.appendChild(item);
 
-        <button class="btn btn-light" onclick="whatsapp('${s.phone}')">
-          💬 WhatsApp
-        </button>
-
-        <button class="btn btn-light" onclick="sms('${s.phone}')">
-          ✉️ SMS
-        </button>
-
-        <button class="btn btn-danger" onclick="deleteStudent(${s.id})">
-          🗑️ মুছুন
-        </button>
-
-      </div>
-
-    </div>
-
-  `).join("");
-
-  updateStats();
+  });
 }
 
-function renderMessageStudents(){
-
-  const box=document.getElementById("messageStudents");
-
-  if(students.length===0){
-    box.innerHTML='<div class="empty">প্রথমে শিক্ষার্থী যোগ করুন।</div>';
-    return;
-  }
-
-  box.innerHTML=students.map(s=>`
-
-    <div class="student">
-
-      <div class="student-name">${escapeHtml(s.name)}</div>
-
-      <div class="phone">
-        Guardian: ${escapeHtml(s.guardian || "Guardian")}<br>
-        ${escapeHtml(s.phone)}
-      </div>
-
-      <div class="actions">
-
-        <button class="btn btn-light"
-          onclick="sendWhatsApp(${s.id})">
-          💬 WhatsApp বার্তা
-        </button>
-
-        <button class="btn btn-light"
-          onclick="sendSMS(${s.id})">
-          ✉️ SMS
-        </button>
-
-      </div>
-
-    </div>
-
-  `).join("");
-}
-
-function sendWhatsApp(id){
-
-  const s=students.find(x=>x.id===id);
-
-  if(!s)return;
-
-  let text=document.getElementById("messageText").value.trim();
-
-  if(!text){
-    alert("আগে বার্তা লিখুন।");
-    return;
-  }
-
-  let phone=s.phone.replace(/\D/g,"");
-
-  if(phone.startsWith("01")){
-    phone="880"+phone.substring(1);
-  }
-
-  const url="https://wa.me/"+phone+"?text="+encodeURIComponent(text);
-
-  window.open(url,"_blank");
-}
-
-function sendSMS(id){
-
-  const s=students.find(x=>x.id===id);
-
-  if(!s)return;
-
-  let text=document.getElementById("messageText").value.trim();
-
-  if(!text){
-    alert("আগে বার্তা লিখুন।");
-    return;
-  }
-
-  window.location.href=
-    "sms:"+s.phone+"?body="+encodeURIComponent(text);
-}
-
+/* Call */
 function callGuardian(phone){
   window.location.href="tel:"+phone;
 }
 
-function whatsapp(phone){
+/* Show student section */
+function showStudents(){
 
-  let number=phone.replace(/\D/g,"");
+  document.getElementById("studentSection")
+  .scrollIntoView({behavior:"smooth"});
 
-  if(number.startsWith("01")){
-    number="880"+number.substring(1);
-  }
-
-  window.open("https://wa.me/"+number,"_blank");
 }
 
-function sms(phone){
-  window.location.href="sms:"+phone;
-}
-
-function deleteStudent(id){
-
-  if(confirm("এই শিক্ষার্থীকে মুছে ফেলতে চান?")){
-
-    students=students.filter(s=>s.id!==id);
-
-    saveData();
-    renderStudents();
-  }
-}
-
-function copyMessage(){
-
-  const text=document.getElementById("messageText").value;
-
-  if(!text){
-    alert("আগে একটি বার্তা লিখুন।");
-    return;
-  }
-
-  navigator.clipboard.writeText(text)
-  .then(()=>alert("বার্তা কপি হয়েছে।"));
-}
-
-function useTemplate(){
-
-  const type=document.getElementById("template").value;
-
-  const messages={
-
-    attendance:
-`আসসালামু আলাইকুম।
-
-আপনার সন্তান আজ মাদ্রাসায় উপস্থিত/অনুপস্থিত হয়েছে।
-
-আল্লাহ তাআলা তাকে দ্বীনের পথে কবুল করুন। আমিন।`,
-
-    progress:
-`আসসালামু আলাইকুম।
-
-আপনার সন্তানের হিফজের অগ্রগতি সম্পর্কে জানানো যাচ্ছে।
-
-তার পড়াশোনার প্রতি নিয়মিত খেয়াল রাখার অনুরোধ করছি।
-
-জাযাকাল্লাহু খাইরান।`,
-
-    meeting:
-`আসসালামু আলাইকুম।
-
-সম্মানিত Guardian,
-আপনাদের সাথে শিক্ষার্থীদের পড়াশোনা ও হিফজের অগ্রগতি নিয়ে গুরুত্বপূর্ণ আলোচনা করা হবে।
-
-সকলকে যথাসময়ে উপস্থিত থাকার অনুরোধ করছি।`,
-
-    holiday:
-`আসসালামু আলাইকুম।
-
-সম্মানিত Guardian,
-মাদ্রাসার ছুটি সংক্রান্ত গুরুত্বপূর্ণ নোটিশ আপনাদের জানানো হলো।
-
-সকলকে মাদ্রাসার নির্দেশনা অনুসরণ করার অনুরোধ করছি।`,
-
-    general:
-`আসসালামু আলাইকুম।
-
-সম্মানিত Guardian,
-আপনাদের সন্তানের পড়াশোনা ও হিফজের প্রতি বিশেষভাবে খেয়াল রাখার অনুরোধ করছি।
-
-জাযাকাল্লাহু খাইরান।`
-
-  };
-
-  document.getElementById("messageText").value=
-    messages[type] || "";
-}
-
-function renderAttendance(){
-
-  const box=document.getElementById("attendanceList");
+/* Guardian message */
+function messageGuardians(){
 
   if(students.length===0){
-    box.innerHTML='<div class="empty">প্রথমে শিক্ষার্থী যোগ করুন।</div>';
+
+    alert(
+      "প্রথমে শিক্ষার্থীদের তালিকায় Guardian-এর মোবাইল নম্বর যোগ করুন।"
+    );
+
     return;
   }
 
-  box.innerHTML=students.map(s=>`
-
-    <div class="student">
-
-      <div class="student-name">
-        ${escapeHtml(s.name)}
-      </div>
-
-      <div style="margin-top:10px;">
-        <button
-          class="btn ${s.present ? "btn-primary" : "btn-light"}"
-          onclick="toggleAttendance(${s.id})">
-
-          ${s.present ? "✅ উপস্থিত" : "⬜ অনুপস্থিত"}
-
-        </button>
-      </div>
-
-    </div>
-
-  `).join("");
-
-  updateStats();
+  document.getElementById("messageModal").style.display="flex";
 }
 
-function toggleAttendance(id){
-
-  const s=students.find(x=>x.id===id);
-
-  if(s){
-    s.present=!s.present;
-    saveData();
-    renderAttendance();
-  }
+function closeMessage(){
+  document.getElementById("messageModal").style.display="none";
 }
 
-function renderProgress(){
+/* Send WhatsApp */
+function sendMessages(){
 
-  const box=document.getElementById("progressList");
+  let message =
+  document.getElementById("messageText").value.trim();
 
-  if(students.length===0){
-    box.innerHTML='<div class="empty">প্রথমে শিক্ষার্থী যোগ করুন।</div>';
+  if(!message){
+    alert("অনুগ্রহ করে একটি বার্তা লিখুন।");
     return;
   }
 
-  box.innerHTML=students.map(s=>`
+  closeMessage();
 
-    <div class="student">
+  /*
+   WhatsApp নিরাপত্তার কারণে ওয়েব ব্রাউজার
+   নিজে থেকে একসাথে সবার কাছে Send করতে পারে না।
+   তাই একজন একজন করে WhatsApp chat খুলবে।
+  */
 
-      <div class="student-name">
-        ${escapeHtml(s.name)}
-      </div>
+  let index=0;
 
-      <div style="margin-top:8px;color:#087653;">
-        📖 ${escapeHtml(s.progress || "অগ্রগতি দেওয়া হয়নি")}
-      </div>
+  function next(){
 
-      <div class="actions">
+    if(index >= students.length){
+      alert("সব Guardian-এর WhatsApp চ্যাট খোলার প্রক্রিয়া শেষ হয়েছে।");
+      return;
+    }
 
-        <button class="btn btn-light"
-          onclick="updateProgress(${s.id})">
-          ✏️ অগ্রগতি পরিবর্তন
-        </button>
+    let phone =
+    students[index].phone.replace(/\D/g,'');
 
-      </div>
+    /* বাংলাদেশ নম্বর 01 দিয়ে শুরু হলে 880 করা */
+    if(phone.startsWith("01")){
+      phone="88"+phone;
+    }
 
-    </div>
+    let url =
+    "https://wa.me/"+phone+
+    "?text="+encodeURIComponent(message);
 
-  `).join("");
-}
+    index++;
 
-function updateProgress(id){
+    window.open(url,"_blank");
 
-  const s=students.find(x=>x.id===id);
+    if(index < students.length){
 
-  if(!s)return;
+      setTimeout(()=>{
+        if(confirm(
+          "পরবর্তী Guardian-এর WhatsApp খুলব?"
+        )){
+          next();
+        }
+      },1000);
 
-  const newProgress=prompt(
-    "নতুন হিফজ অগ্রগতি লিখুন:",
-    s.progress || ""
-  );
+    }
 
-  if(newProgress!==null){
-
-    s.progress=newProgress;
-
-    saveData();
-    renderProgress();
   }
+
+  next();
 }
 
-function updateStats(){
-
-  document.getElementById("totalStudents").textContent=
-    students.length;
-
-  document.getElementById("totalGuardians").textContent=
-    students.length;
-
-  document.getElementById("presentCount").textContent=
-    students.filter(s=>s.present).length;
-}
-
-function escapeHtml(text){
-
-  return String(text)
-    .replace(/&/g,"&amp;")
-    .replace(/</g,"&lt;")
-    .replace(/>/g,"&gt;")
-    .replace(/"/g,"&quot;")
-    .replace(/'/g,"&#039;");
-}
-
-updateStats();
+/* Initial */
+renderStudents();
 
 </script>
 
