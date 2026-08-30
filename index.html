@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#006b45">
+<meta name="theme-color" content="#0f6b4f">
+<meta name="description" content="HifzConnect - হেফজ গার্ডিয়ান">
+
 <title>HifzConnect - হেফজ গার্ডিয়ান</title>
 
 <style>
@@ -15,367 +17,299 @@
 }
 
 body{
-  background:#f4f8f4;
-  color:#173b2c;
+  background:#eef7f2;
+  color:#17352b;
 }
 
 .app{
   max-width:480px;
-  margin:auto;
   min-height:100vh;
-  background:#f8faf8;
-  padding-bottom:90px;
+  margin:auto;
+  background:#f8fcfa;
+  box-shadow:0 0 25px rgba(0,0,0,.08);
 }
 
 /* Header */
 .header{
-  background:linear-gradient(145deg,#005c3b,#008457);
+  background:linear-gradient(145deg,#07583f,#12815d);
   color:white;
-  padding:20px 18px 70px;
-  border-radius:0 0 38px 38px;
-  position:relative;
-  overflow:hidden;
+  padding:25px 20px 30px;
+  border-radius:0 0 28px 28px;
 }
 
-.header:after{
-  content:"☾  ✦";
-  position:absolute;
-  right:20px;
-  bottom:15px;
-  font-size:55px;
-  opacity:.12;
-}
-
-.top{
+.brand{
   display:flex;
   align-items:center;
-  justify-content:space-between;
-}
-
-.menu,.bell{
-  font-size:27px;
-  width:45px;
-  height:45px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  gap:12px;
 }
 
 .logo{
-  text-align:center;
-  flex:1;
-}
-
-.logo h1{
-  font-size:28px;
-  font-weight:800;
-}
-
-.logo h1 span{
-  color:#e5b63c;
-}
-
-.logo p{
-  font-size:14px;
-  margin-top:3px;
-  color:#f4d77c;
-}
-
-/* Welcome Card */
-.welcome{
-  background:white;
-  margin:-48px 15px 15px;
-  position:relative;
-  border-radius:28px;
-  padding:20px;
-  box-shadow:0 5px 20px #00000012;
-}
-
-.welcome h2{
-  color:#006b45;
-  font-size:21px;
-  margin-bottom:7px;
-}
-
-.welcome p{
-  color:#555;
-  font-size:14px;
-}
-
-/* Stats */
-.stats{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
-  padding:0 15px 15px;
-}
-
-.stat{
-  padding:18px;
-  border-radius:20px;
-  min-height:105px;
-  box-shadow:0 3px 12px #0000000d;
-}
-
-.stat.green{background:#edf8ec}
-.stat.blue{background:#eef6ff}
-.stat.red{background:#fff0ef}
-.stat.yellow{background:#fff8e8}
-
-.stat .icon{
-  font-size:25px;
-}
-
-.stat h3{
-  font-size:14px;
-  margin-top:5px;
-  color:#444;
-}
-
-.stat strong{
-  font-size:27px;
-}
-
-/* Guardian Message */
-.guardian{
-  margin:0 15px 15px;
-  background:#eaf6e9;
-  border-radius:22px;
-  padding:18px;
+  width:54px;
+  height:54px;
+  border-radius:16px;
+  background:#f4c95d;
   display:flex;
   align-items:center;
-  gap:14px;
-  box-shadow:0 3px 12px #0000000c;
+  justify-content:center;
+  font-size:27px;
+  color:#07583f;
+  box-shadow:0 5px 15px rgba(0,0,0,.15);
 }
 
-.guardian .bigicon{
-  font-size:38px;
+.brand h1{
+  font-size:23px;
 }
 
-.guardian h2{
-  font-size:18px;
-  color:#006b45;
-}
-
-.guardian p{
+.brand p{
   font-size:13px;
-  margin-top:4px;
-  color:#555;
+  opacity:.85;
+  margin-top:3px;
 }
 
-.guardian button{
-  margin-left:auto;
-  border:0;
-  background:#006b45;
-  color:white;
-  border-radius:12px;
-  padding:10px 13px;
-  font-size:18px;
+.teacher{
+  margin-top:23px;
 }
 
-/* Grid */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  padding:0 15px;
+.teacher small{
+  opacity:.8;
 }
 
-.card{
-  background:white;
-  border-radius:19px;
-  padding:16px 7px;
-  min-height:105px;
-  text-align:center;
-  box-shadow:0 3px 12px #0000000d;
-  border:1px solid #edf1ed;
+.teacher h2{
+  font-size:20px;
+  margin-top:5px;
 }
 
-.card:first-child{
-  background:#006b45;
-  color:white;
-}
-
-.card .i{
-  font-size:29px;
-  margin-bottom:8px;
-}
-
-.card h3{
-  font-size:13px;
-}
-
-.card p{
-  font-size:11px;
-  color:#777;
-  margin-top:4px;
-}
-
-.card:first-child p{
-  color:#d8f2e6;
-}
-
-/* Section */
-.section{
-  padding:20px 15px 5px;
+/* Content */
+.content{
+  padding:20px;
 }
 
 .section-title{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  margin-bottom:12px;
+  margin-bottom:13px;
 }
 
-.section-title h2{
-  font-size:19px;
-  color:#173b2c;
-}
-
-.add{
-  background:#006b45;
-  color:white;
-  border:0;
-  border-radius:10px;
-  padding:9px 13px;
-}
-
-/* Student list */
-.student{
-  background:white;
-  border-radius:17px;
-  padding:14px;
-  margin-bottom:10px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  box-shadow:0 3px 10px #0000000a;
-}
-
-.avatar{
-  width:45px;
-  height:45px;
-  background:#e8f5e9;
-  color:#006b45;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:21px;
-}
-
-.student-info{
-  flex:1;
-}
-
-.student-info strong{
-  display:block;
-}
-
-.student-info small{
-  color:#777;
-}
-
-.call{
-  background:#e9f7ef;
-  border:0;
-  border-radius:10px;
-  padding:9px;
+.section-title h3{
   font-size:18px;
 }
 
-/* Bottom navigation */
-.bottom{
-  position:fixed;
-  bottom:0;
-  left:50%;
-  transform:translateX(-50%);
-  width:min(480px,100%);
-  height:78px;
-  background:#005c3b;
-  border-radius:28px 28px 0 0;
+.date{
+  font-size:12px;
+  color:#668078;
+}
+
+/* Summary */
+.summary{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-bottom:22px;
+}
+
+.card{
+  background:white;
+  border-radius:18px;
+  padding:15px 10px;
+  text-align:center;
+  box-shadow:0 5px 18px rgba(21,75,55,.07);
+  border:1px solid #e2eee8;
+}
+
+.card .icon{
+  font-size:23px;
+}
+
+.card strong{
+  display:block;
+  font-size:20px;
+  color:#07583f;
+  margin-top:5px;
+}
+
+.card span{
+  font-size:11px;
+  color:#71847e;
+}
+
+/* Menu */
+.menu{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.menu-item{
+  background:white;
+  border:1px solid #e1eee8;
+  border-radius:20px;
+  padding:18px 12px;
+  cursor:pointer;
+  transition:.2s;
+  box-shadow:0 5px 18px rgba(21,75,55,.06);
+}
+
+.menu-item:active{
+  transform:scale(.97);
+}
+
+.menu-icon{
+  width:45px;
+  height:45px;
+  border-radius:14px;
   display:flex;
-  justify-content:space-around;
   align-items:center;
-  color:white;
-  box-shadow:0 -4px 20px #00000018;
+  justify-content:center;
+  font-size:23px;
+  background:#e7f5ee;
+  margin-bottom:10px;
+}
+
+.menu-item h4{
+  font-size:15px;
+  color:#183b30;
+}
+
+.menu-item p{
+  font-size:11px;
+  color:#80918b;
+  margin-top:3px;
+}
+
+/* Progress */
+.progress-box{
+  background:white;
+  margin-top:22px;
+  padding:18px;
+  border-radius:20px;
+  border:1px solid #e1eee8;
+  box-shadow:0 5px 18px rgba(21,75,55,.06);
+}
+
+.progress-top{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:12px;
+}
+
+.progress-top strong{
+  color:#07583f;
+}
+
+.progress-bar{
+  height:10px;
+  background:#e7eee9;
+  border-radius:20px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  width:72%;
+  height:100%;
+  background:linear-gradient(90deg,#0b7655,#e2b943);
+  border-radius:20px;
+}
+
+/* Notice */
+.notice{
+  margin-top:18px;
+  background:#fff9e9;
+  border:1px solid #f2dfaa;
+  border-radius:20px;
+  padding:16px;
+}
+
+.notice-title{
+  display:flex;
+  gap:9px;
+  align-items:center;
+  font-weight:bold;
+  color:#735815;
+}
+
+.notice p{
+  font-size:13px;
+  color:#796b48;
+  margin-top:8px;
+  line-height:1.6;
+}
+
+/* Bottom */
+.bottom{
+  position:sticky;
+  bottom:0;
+  background:white;
+  border-top:1px solid #e3eee9;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  padding:9px 5px 7px;
+  margin-top:25px;
 }
 
 .nav{
   text-align:center;
-  font-size:12px;
-  opacity:.85;
-}
-
-.nav .ni{
-  font-size:24px;
-  display:block;
-  margin-bottom:3px;
+  color:#84928d;
+  font-size:11px;
+  cursor:pointer;
 }
 
 .nav.active{
-  color:#f3c64e;
-  opacity:1;
+  color:#087453;
+  font-weight:bold;
 }
 
-/* Modal */
-.modal{
+.nav-icon{
+  display:block;
+  font-size:21px;
+  margin-bottom:3px;
+}
+
+/* Popup */
+.popup{
   display:none;
   position:fixed;
   inset:0;
-  background:#00000066;
+  background:rgba(0,0,0,.45);
   z-index:10;
   align-items:flex-end;
   justify-content:center;
 }
 
-.modal-box{
-  width:min(480px,100%);
+.popup-box{
+  width:100%;
+  max-width:480px;
   background:white;
-  padding:24px;
   border-radius:28px 28px 0 0;
+  padding:25px 20px;
+  animation:up .25s ease;
 }
 
-.modal-box h2{
-  margin-bottom:15px;
+@keyframes up{
+  from{transform:translateY(100%)}
+  to{transform:translateY(0)}
 }
 
-input,textarea{
-  width:100%;
-  padding:13px;
-  border:1px solid #ddd;
-  border-radius:12px;
+.popup-box h3{
+  color:#07583f;
   margin-bottom:10px;
-  font-size:15px;
 }
 
-textarea{
-  min-height:100px;
-}
-
-.save{
-  width:100%;
-  background:#006b45;
-  color:white;
-  border:0;
-  padding:14px;
-  border-radius:12px;
-  font-size:16px;
+.popup-box p{
+  color:#667771;
+  line-height:1.7;
+  font-size:14px;
 }
 
 .close{
   width:100%;
-  margin-top:8px;
-  padding:12px;
+  margin-top:20px;
   border:0;
-  background:#eee;
-  border-radius:12px;
-}
-
-.empty{
-  text-align:center;
-  padding:20px;
-  color:#888;
+  background:#07583f;
+  color:white;
+  padding:13px;
+  border-radius:14px;
+  font-size:15px;
 }
 </style>
 </head>
@@ -384,416 +318,199 @@ textarea{
 
 <div class="app">
 
-  <!-- HEADER -->
-  <div class="header">
-    <div class="top">
-      <div class="menu">☰</div>
+  <header class="header">
 
-      <div class="logo">
-        <h1>Hifz<span>Connect</span></h1>
-        <p>— হেফজ গার্ডিয়ান —</p>
+    <div class="brand">
+      <div class="logo">📖</div>
+      <div>
+        <h1>HifzConnect</h1>
+        <p>হেফজ গার্ডিয়ান</p>
       </div>
-
-      <div class="bell">♧</div>
-    </div>
-  </div>
-
-  <!-- WELCOME -->
-  <div class="welcome">
-    <h2>আসসালামু আলাইকুম</h2>
-    <p>উস্তাদ মোহাম্মদ সালমান</p>
-    <br>
-    <p>📅 আজকের তারিখ: <span id="date"></span></p>
-  </div>
-
-  <!-- STATS -->
-  <div class="stats">
-
-    <div class="stat green">
-      <div class="icon">👥</div>
-      <h3>মোট শিক্ষার্থী</h3>
-      <strong id="total">0</strong>
     </div>
 
-    <div class="stat blue">
-      <div class="icon">✅</div>
-      <h3>আজ উপস্থিত</h3>
-      <strong id="present">0</strong>
+    <div class="teacher">
+      <small>আসসালামু আলাইকুম</small>
+      <h2>ওস্তাদ হাফেজ মোহাম্মদ মাহমুদ সাহেব</h2>
     </div>
 
-    <div class="stat red">
-      <div class="icon">❌</div>
-      <h3>অনুপস্থিত</h3>
-      <strong id="absent">0</strong>
-    </div>
+  </header>
 
-    <div class="stat yellow">
-      <div class="icon">📖</div>
-      <h3>আজ পড়া শুনেছে</h3>
-      <strong id="lesson">0</strong>
-    </div>
 
-  </div>
-
-  <!-- GUARDIAN MESSAGE -->
-  <div class="guardian">
-    <div class="bigicon">📢</div>
-
-    <div>
-      <h2>Guardian Message</h2>
-      <p>এক ক্লিকে সকল অভিভাবকের কাছে বার্তা পাঠান</p>
-    </div>
-
-    <button onclick="messageGuardians()">➤</button>
-  </div>
-
-  <!-- MAIN GRID -->
-  <div class="grid">
-
-    <div class="card" onclick="showStudents()">
-      <div class="i">👥</div>
-      <h3>শিক্ষার্থীদের তালিকা</h3>
-      <p>সব শিক্ষার্থীর তথ্য</p>
-    </div>
-
-    <div class="card" onclick="openStudent()">
-      <div class="i">👤+</div>
-      <h3>ছাত্র যোগ করুন</h3>
-      <p>নতুন ছাত্র যোগ</p>
-    </div>
-
-    <div class="card" onclick="messageGuardians()">
-      <div class="i">➤</div>
-      <h3>বার্তা পাঠান</h3>
-      <p>Guardian-দের</p>
-    </div>
-
-    <div class="card">
-      <div class="i">📋</div>
-      <h3>উপস্থিতি</h3>
-      <p>দৈনিক উপস্থিতি</p>
-    </div>
-
-    <div class="card">
-      <div class="i">📈</div>
-      <h3>পড়ার অগ্রগতি</h3>
-      <p>সবক ও আমুখতা</p>
-    </div>
-
-    <div class="card">
-      <div class="i">📅</div>
-      <h3>ক্যালেন্ডার</h3>
-      <p>পরীক্ষা ও অনুষ্ঠান</p>
-    </div>
-
-    <div class="card">
-      <div class="i">👨‍👩‍👦</div>
-      <h3>অভিভাবক মিটিং</h3>
-      <p>মিটিং ও আলোচনা</p>
-    </div>
-
-    <div class="card">
-      <div class="i">📖</div>
-      <h3>ইসলামিক বিভাগ</h3>
-      <p>দোয়া, হাদিস, আয়াত</p>
-    </div>
-
-    <div class="card">
-      <div class="i">•••</div>
-      <h3>আরও</h3>
-      <p>সেটিংস ও অন্যান্য</p>
-    </div>
-
-  </div>
-
-  <!-- STUDENT SECTION -->
-  <div class="section" id="studentSection">
+  <main class="content">
 
     <div class="section-title">
-      <h2>শিক্ষার্থীদের তালিকা</h2>
-      <button class="add" onclick="openStudent()">＋ যোগ</button>
+      <h3>আজকের সারাংশ</h3>
+      <span class="date">আজ</span>
     </div>
 
-    <div id="studentList"></div>
+    <div class="summary">
+
+      <div class="card">
+        <div class="icon">👨‍🎓</div>
+        <strong>২৫</strong>
+        <span>মোট ছাত্র</span>
+      </div>
+
+      <div class="card">
+        <div class="icon">✅</div>
+        <strong>২৩</strong>
+        <span>উপস্থিত</span>
+      </div>
+
+      <div class="card">
+        <div class="icon">📖</div>
+        <strong>১৮</strong>
+        <span>পড়া হয়েছে</span>
+      </div>
+
+    </div>
+
+
+    <div class="section-title">
+      <h3>দ্রুত কাজ</h3>
+    </div>
+
+    <div class="menu">
+
+      <div class="menu-item" onclick="openPopup('শিক্ষার্থী')">
+        <div class="menu-icon">👨‍🎓</div>
+        <h4>শিক্ষার্থী</h4>
+        <p>ছাত্রদের তথ্য দেখুন</p>
+      </div>
+
+      <div class="menu-item" onclick="openPopup('উপস্থিতি')">
+        <div class="menu-icon">✅</div>
+        <h4>উপস্থিতি</h4>
+        <p>আজকের হাজিরা দিন</p>
+      </div>
+
+      <div class="menu-item" onclick="openPopup('হিফজ অগ্রগতি')">
+        <div class="menu-icon">📚</div>
+        <h4>হিফজ অগ্রগতি</h4>
+        <p>পড়ার অগ্রগতি দেখুন</p>
+      </div>
+
+      <div class="menu-item" onclick="openPopup('অভিভাবক')">
+        <div class="menu-icon">👨‍👩‍👦</div>
+        <h4>অভিভাবক</h4>
+        <p>অভিভাবকদের তথ্য</p>
+      </div>
+
+      <div class="menu-item" onclick="openPopup('রিপোর্ট')">
+        <div class="menu-icon">📊</div>
+        <h4>রিপোর্ট</h4>
+        <p>দৈনিক ও মাসিক রিপোর্ট</p>
+      </div>
+
+      <div class="menu-item" onclick="openPopup('ইসলামিক')">
+        <div class="menu-icon">🕌</div>
+        <h4>ইসলামিক</h4>
+        <p>ইসলামিক রিসোর্স</p>
+      </div>
+
+    </div>
+
+
+    <div class="progress-box">
+
+      <div class="progress-top">
+        <span>আজকের হিফজ অগ্রগতি</span>
+        <strong>৭২%</strong>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div>
+
+    </div>
+
+
+    <div class="notice">
+
+      <div class="notice-title">
+        <span>🔔</span>
+        <span>গুরুত্বপূর্ণ নোটিশ</span>
+      </div>
+
+      <p>
+        আজকের সবক ও দৌর সম্পন্ন করার পর
+        শিক্ষার্থীদের অগ্রগতি আপডেট করুন।
+      </p>
+
+    </div>
+
+  </main>
+
+
+  <nav class="bottom">
+
+    <div class="nav active" onclick="navClick('হোম')">
+      <span class="nav-icon">🏠</span>
+      হোম
+    </div>
+
+    <div class="nav" onclick="navClick('নোটিশ')">
+      <span class="nav-icon">🔔</span>
+      নোটিশ
+    </div>
+
+    <div class="nav" onclick="navClick('রিপোর্ট')">
+      <span class="nav-icon">📊</span>
+      রিপোর্ট
+    </div>
+
+    <div class="nav" onclick="navClick('সেটিংস')">
+      <span class="nav-icon">⚙️</span>
+      সেটিংস
+    </div>
+
+  </nav>
+
+</div>
+
+
+<div class="popup" id="popup">
+
+  <div class="popup-box">
+
+    <h3 id="popupTitle"></h3>
+
+    <p>
+      এই বিভাগটি পরবর্তী ধাপে সম্পূর্ণ কার্যকর করা হবে।
+      এখানে আপনার প্রয়োজন অনুযায়ী তথ্য যোগ, পরিবর্তন ও সংরক্ষণ
+      করার ব্যবস্থা থাকবে।
+    </p>
+
+    <button class="close" onclick="closePopup()">বন্ধ করুন</button>
 
   </div>
 
 </div>
 
-<!-- BOTTOM NAV -->
-<div class="bottom">
-
-  <div class="nav active">
-    <span class="ni">⌂</span>
-    হোম
-  </div>
-
-  <div class="nav">
-    <span class="ni">🔔</span>
-    নোটিশ
-  </div>
-
-  <div class="nav">
-    <span class="ni">▤</span>
-    রিপোর্ট
-  </div>
-
-  <div class="nav">
-    <span class="ni">⚙</span>
-    সেটিংস
-  </div>
-
-</div>
-
-<!-- ADD STUDENT MODAL -->
-<div class="modal" id="studentModal">
-
-  <div class="modal-box">
-
-    <h2>👤 নতুন শিক্ষার্থী যোগ করুন</h2>
-
-    <input id="studentName" placeholder="শিক্ষার্থীর নাম">
-
-    <input id="guardianName" placeholder="অভিভাবকের নাম">
-
-    <input id="guardianPhone" type="tel" placeholder="অভিভাবকের মোবাইল নম্বর">
-
-    <button class="save" onclick="saveStudent()">
-      শিক্ষার্থী সংরক্ষণ করুন
-    </button>
-
-    <button class="close" onclick="closeStudent()">
-      বাতিল
-    </button>
-
-  </div>
-
-</div>
-
-<!-- MESSAGE MODAL -->
-<div class="modal" id="messageModal">
-
-  <div class="modal-box">
-
-    <h2>📢 Guardian Message</h2>
-
-    <textarea id="messageText"
-      placeholder="অভিভাবকদের জন্য আপনার বার্তা লিখুন..."></textarea>
-
-    <button class="save" onclick="sendMessages()">
-      WhatsApp-এ বার্তা পাঠান
-    </button>
-
-    <button class="close" onclick="closeMessage()">
-      বাতিল
-    </button>
-
-  </div>
-
-</div>
 
 <script>
 
-let students =
-JSON.parse(localStorage.getItem("hifz_students")) || [];
-
-/* Date */
-document.getElementById("date").innerText =
-new Date().toLocaleDateString("bn-BD",{
-  year:"numeric",
-  month:"long",
-  day:"numeric",
-  weekday:"long"
-});
-
-/* Open student */
-function openStudent(){
-  document.getElementById("studentModal").style.display="flex";
+function openPopup(title){
+  document.getElementById("popupTitle").innerText = title;
+  document.getElementById("popup").style.display = "flex";
 }
 
-function closeStudent(){
-  document.getElementById("studentModal").style.display="none";
+function closePopup(){
+  document.getElementById("popup").style.display = "none";
 }
 
-/* Save student */
-function saveStudent(){
+function navClick(name){
 
-  let name =
-  document.getElementById("studentName").value.trim();
-
-  let guardian =
-  document.getElementById("guardianName").value.trim();
-
-  let phone =
-  document.getElementById("guardianPhone").value.trim();
-
-  if(!name || !phone){
-    alert("শিক্ষার্থীর নাম ও অভিভাবকের মোবাইল নম্বর দিন।");
-    return;
-  }
-
-  students.push({
-    name:name,
-    guardian:guardian,
-    phone:phone
+  document.querySelectorAll(".nav").forEach(function(item){
+    item.classList.remove("active");
   });
 
-  localStorage.setItem(
-    "hifz_students",
-    JSON.stringify(students)
-  );
+  event.currentTarget.classList.add("active");
 
-  document.getElementById("studentName").value="";
-  document.getElementById("guardianName").value="";
-  document.getElementById("guardianPhone").value="";
-
-  closeStudent();
-  renderStudents();
-
-  alert("শিক্ষার্থী সফলভাবে সংরক্ষণ হয়েছে।");
-}
-
-/* Show students */
-function renderStudents(){
-
-  document.getElementById("total").innerText =
-  students.length;
-
-  let list =
-  document.getElementById("studentList");
-
-  if(students.length===0){
-
-    list.innerHTML =
-    '<div class="empty">এখনো কোনো শিক্ষার্থী যোগ করা হয়নি।<br>উপরে ＋ যোগ করুন চাপুন।</div>';
-
-    return;
+  if(name !== "হোম"){
+    openPopup(name);
   }
-
-  list.innerHTML="";
-
-  students.forEach((s,index)=>{
-
-    let item=document.createElement("div");
-
-    item.className="student";
-
-    item.innerHTML=`
-
-      <div class="avatar">👤</div>
-
-      <div class="student-info">
-        <strong>${s.name}</strong>
-        <small>${s.guardian || "অভিভাবক"} • ${s.phone}</small>
-      </div>
-
-      <button class="call"
-        onclick="callGuardian('${s.phone}')">
-        📞
-      </button>
-
-    `;
-
-    list.appendChild(item);
-
-  });
 }
-
-/* Call */
-function callGuardian(phone){
-  window.location.href="tel:"+phone;
-}
-
-/* Show student section */
-function showStudents(){
-
-  document.getElementById("studentSection")
-  .scrollIntoView({behavior:"smooth"});
-
-}
-
-/* Guardian message */
-function messageGuardians(){
-
-  if(students.length===0){
-
-    alert(
-      "প্রথমে শিক্ষার্থীদের তালিকায় Guardian-এর মোবাইল নম্বর যোগ করুন।"
-    );
-
-    return;
-  }
-
-  document.getElementById("messageModal").style.display="flex";
-}
-
-function closeMessage(){
-  document.getElementById("messageModal").style.display="none";
-}
-
-/* Send WhatsApp */
-function sendMessages(){
-
-  let message =
-  document.getElementById("messageText").value.trim();
-
-  if(!message){
-    alert("অনুগ্রহ করে একটি বার্তা লিখুন।");
-    return;
-  }
-
-  closeMessage();
-
-  /*
-   WhatsApp নিরাপত্তার কারণে ওয়েব ব্রাউজার
-   নিজে থেকে একসাথে সবার কাছে Send করতে পারে না।
-   তাই একজন একজন করে WhatsApp chat খুলবে।
-  */
-
-  let index=0;
-
-  function next(){
-
-    if(index >= students.length){
-      alert("সব Guardian-এর WhatsApp চ্যাট খোলার প্রক্রিয়া শেষ হয়েছে।");
-      return;
-    }
-
-    let phone =
-    students[index].phone.replace(/\D/g,'');
-
-    /* বাংলাদেশ নম্বর 01 দিয়ে শুরু হলে 880 করা */
-    if(phone.startsWith("01")){
-      phone="88"+phone;
-    }
-
-    let url =
-    "https://wa.me/"+phone+
-    "?text="+encodeURIComponent(message);
-
-    index++;
-
-    window.open(url,"_blank");
-
-    if(index < students.length){
-
-      setTimeout(()=>{
-        if(confirm(
-          "পরবর্তী Guardian-এর WhatsApp খুলব?"
-        )){
-          next();
-        }
-      },1000);
-
-    }
-
-  }
-
-  next();
-}
-
-/* Initial */
-renderStudents();
 
 </script>
 
