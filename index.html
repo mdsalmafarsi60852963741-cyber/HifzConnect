@@ -7,470 +7,547 @@
 <title>HifzConnect - হেফজ গার্ডিয়ান</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
 
 body{
-font-family:"Noto Sans Bengali","Arial",sans-serif;
-background:#edf7f2;
-color:#17382d;
-overflow-x:hidden;
+  font-family:"Noto Sans Bengali","Arial",sans-serif;
+  background:#edf7f2;
+  color:#17382d;
+  overflow-x:hidden;
+}
+
+button,input,textarea,select{
+  font-family:inherit;
 }
 
 .app{
-width:100%;
-max-width:480px;
-min-height:100vh;
-margin:auto;
-background:#f8fcfa;
+  width:100%;
+  max-width:480px;
+  min-height:100vh;
+  margin:auto;
+  background:#f8fcfa;
 }
 
+/* HEADER */
 .header{
-background:linear-gradient(145deg,#07583f,#12845f);
-color:white;
-padding:20px 16px 25px;
-border-radius:0 0 30px 30px;
+  background:linear-gradient(145deg,#07583f,#12845f);
+  color:white;
+  padding:20px 16px 25px;
+  border-radius:0 0 30px 30px;
 }
 
 .top{
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-
-.logo{
-font-size:25px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }
 
 .brand{
-text-align:center;
-flex:1;
+  text-align:center;
+  flex:1;
 }
 
 .brand h1{
-font-family:Arial,sans-serif;
-font-size:24px;
-font-weight:bold;
+  font-family:Arial,sans-serif;
+  font-size:24px;
+  font-weight:bold;
 }
 
 .brand h1 span{
-color:#e5b83e;
+  color:#e5b83e;
 }
 
 .brand p{
-font-size:12px;
-color:#f4d16a;
+  font-size:12px;
+  color:#f4d16a;
 }
 
 .icon-btn{
-width:42px;
-height:42px;
-border:0;
-border-radius:13px;
-background:rgba(255,255,255,.13);
-color:white;
-font-size:21px;
+  width:42px;
+  height:42px;
+  border:0;
+  border-radius:13px;
+  background:rgba(255,255,255,.13);
+  color:white;
+  font-size:21px;
+  cursor:pointer;
 }
 
 .welcome{
-margin-top:20px;
-background:white;
-color:#17382d;
-padding:17px;
-border-radius:23px 23px 23px 8px;
+  margin-top:20px;
+  background:white;
+  color:#17382d;
+  padding:17px;
+  border-radius:23px 23px 23px 8px;
 }
 
 .welcome small{
-color:#087253;
+  color:#087253;
 }
 
 .welcome h2{
-font-size:18px;
-line-height:1.6;
-margin-top:4px;
+  font-size:18px;
+  line-height:1.6;
+  margin-top:4px;
 }
 
+/* CONTENT */
 .content{
-padding:18px 15px 100px;
+  padding:18px 15px 100px;
 }
 
 .section-head{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:13px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:13px;
 }
 
 .section-head h3{
-font-size:19px;
+  font-size:19px;
 }
 
 .date{
-font-size:12px;
-color:#75847e;
+  font-size:12px;
+  color:#75847e;
 }
 
 .summary{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:9px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:9px;
 }
 
 .card{
-background:white;
-border:1px solid #dfebe5;
-border-radius:19px;
-padding:14px 5px;
-text-align:center;
-box-shadow:0 5px 15px rgba(0,0,0,.05);
+  background:white;
+  border:1px solid #dfebe5;
+  border-radius:19px;
+  padding:14px 5px;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,.05);
 }
 
 .card .emoji{
-font-size:23px;
+  font-size:23px;
 }
 
 .card strong{
-display:block;
-font-size:22px;
-color:#075d43;
-margin-top:4px;
+  display:block;
+  font-size:22px;
+  color:#075d43;
+  margin-top:4px;
 }
 
 .card span{
-font-size:11px;
-color:#71817b;
+  font-size:11px;
+  color:#71817b;
 }
 
 .quick{
-margin-top:23px;
-margin-bottom:12px;
-font-size:19px;
+  margin-top:23px;
+  margin-bottom:12px;
+  font-size:19px;
 }
 
 .grid{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:11px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:11px;
 }
 
 .menu{
-background:white;
-border:1px solid #dfebe5;
-border-radius:20px;
-padding:16px 13px;
-min-height:120px;
-box-shadow:0 5px 15px rgba(0,0,0,.05);
-cursor:pointer;
+  background:white;
+  border:1px solid #dfebe5;
+  border-radius:20px;
+  padding:16px 13px;
+  min-height:120px;
+  box-shadow:0 5px 15px rgba(0,0,0,.05);
+  cursor:pointer;
+  transition:.15s;
 }
 
 .menu:active{
-transform:scale(.98);
+  transform:scale(.97);
 }
 
 .menu-icon{
-width:46px;
-height:46px;
-border-radius:14px;
-background:#e8f6ef;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:24px;
-margin-bottom:8px;
+  width:46px;
+  height:46px;
+  border-radius:14px;
+  background:#e8f6ef;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  margin-bottom:8px;
 }
 
 .menu h4{
-font-size:15px;
+  font-size:15px;
 }
 
 .menu p{
-font-size:11px;
-color:#788981;
-margin-top:3px;
+  font-size:11px;
+  color:#788981;
+  margin-top:3px;
 }
 
+/* PROGRESS */
 .progress{
-margin-top:18px;
-background:white;
-border:1px solid #dfebe5;
-border-radius:20px;
-padding:17px;
+  margin-top:18px;
+  background:white;
+  border:1px solid #dfebe5;
+  border-radius:20px;
+  padding:17px;
 }
 
 .progress-head{
-display:flex;
-justify-content:space-between;
-margin-bottom:10px;
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:10px;
 }
 
 .progress-head strong{
-color:#087354;
+  color:#087354;
 }
 
 .bar{
-height:9px;
-background:#e6eee9;
-border-radius:20px;
-overflow:hidden;
+  height:9px;
+  background:#e6eee9;
+  border-radius:20px;
+  overflow:hidden;
 }
 
 .fill{
-height:100%;
-width:72%;
-background:linear-gradient(90deg,#087354,#ddb33b);
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,#087354,#ddb33b);
+  transition:.3s;
 }
 
+/* NOTICE */
 .notice{
-margin-top:17px;
-background:#fff9e8;
-border:1px solid #f0dda8;
-border-radius:20px;
-padding:15px;
+  margin-top:17px;
+  background:#fff9e8;
+  border:1px solid #f0dda8;
+  border-radius:20px;
+  padding:15px;
 }
 
 .notice b{
-color:#725a17;
+  color:#725a17;
 }
 
 .notice p{
-font-size:12px;
-line-height:1.7;
-margin-top:6px;
-color:#756b4c;
+  font-size:12px;
+  line-height:1.7;
+  margin-top:6px;
+  color:#756b4c;
 }
 
+/* BOTTOM */
 .bottom{
-position:fixed;
-bottom:0;
-left:50%;
-transform:translateX(-50%);
-width:100%;
-max-width:480px;
-height:70px;
-background:#07583f;
-border-radius:23px 23px 0 0;
-display:grid;
-grid-template-columns:repeat(4,1fr);
-z-index:50;
-padding-top:7px;
+  position:fixed;
+  bottom:0;
+  left:50%;
+  transform:translateX(-50%);
+  width:100%;
+  max-width:480px;
+  height:70px;
+  background:#07583f;
+  border-radius:23px 23px 0 0;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  z-index:50;
+  padding-top:7px;
 }
 
 .nav{
-color:#dcebe5;
-text-align:center;
-font-size:11px;
-cursor:pointer;
+  color:#dcebe5;
+  text-align:center;
+  font-size:11px;
+  cursor:pointer;
 }
 
 .nav-icon{
-display:block;
-font-size:22px;
-line-height:30px;
+  display:block;
+  font-size:22px;
+  line-height:30px;
 }
 
 .nav.active{
-color:#f0c650;
-font-weight:bold;
+  color:#f0c650;
+  font-weight:bold;
 }
 
+/* PAGES */
 .page{
-display:none;
+  display:none;
 }
 
 .page.active{
-display:block;
+  display:block;
 }
 
-/* Modal */
-
+/* MODAL */
 .modal{
-display:none;
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.48);
-z-index:100;
-align-items:flex-end;
-justify-content:center;
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.48);
+  z-index:100;
+  align-items:flex-end;
+  justify-content:center;
+}
+
+.modal.show{
+  display:flex;
 }
 
 .modal-box{
-width:100%;
-max-width:480px;
-max-height:92vh;
-overflow:auto;
-background:white;
-border-radius:28px 28px 0 0;
-padding:22px 17px 30px;
+  width:100%;
+  max-width:480px;
+  max-height:92vh;
+  overflow:auto;
+  background:white;
+  border-radius:28px 28px 0 0;
+  padding:22px 17px 30px;
+  animation:slideUp .2s ease;
+}
+
+@keyframes slideUp{
+  from{
+    transform:translateY(100%);
+  }
+  to{
+    transform:translateY(0);
+  }
 }
 
 .modal-title{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:16px;
 }
 
 .modal-title h3{
-color:#07583f;
-font-size:20px;
+  color:#07583f;
+  font-size:20px;
 }
 
 .close{
-border:0;
-background:#edf5f1;
-border-radius:10px;
-font-size:20px;
-width:38px;
-height:38px;
+  border:0;
+  background:#edf5f1;
+  color:#07583f;
+  border-radius:10px;
+  font-size:22px;
+  width:38px;
+  height:38px;
+  cursor:pointer;
 }
 
+/* FORM */
 .form-group{
-margin-bottom:13px;
+  margin-bottom:13px;
 }
 
 .form-group label{
-display:block;
-font-size:13px;
-font-weight:bold;
-margin-bottom:5px;
+  display:block;
+  font-size:13px;
+  font-weight:bold;
+  margin-bottom:5px;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select{
-width:100%;
-border:1px solid #d9e7e0;
-border-radius:12px;
-padding:12px;
-font-size:14px;
-outline:none;
-background:#fbfdfc;
+  width:100%;
+  border:1px solid #d9e7e0;
+  border-radius:12px;
+  padding:12px;
+  font-size:14px;
+  outline:none;
+  background:#fbfdfc;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus{
+  border-color:#087354;
 }
 
 .form-group textarea{
-min-height:75px;
-resize:vertical;
+  min-height:75px;
+  resize:vertical;
 }
 
 .save-btn{
-width:100%;
-border:0;
-background:#07583f;
-color:white;
-padding:13px;
-border-radius:13px;
-font-size:15px;
-font-weight:bold;
+  width:100%;
+  border:0;
+  background:#07583f;
+  color:white;
+  padding:13px;
+  border-radius:13px;
+  font-size:15px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.save-btn:active{
+  transform:scale(.98);
 }
 
 .secondary{
-background:#eaf5ef;
-color:#07583f;
-margin-top:9px;
+  background:#eaf5ef;
+  color:#07583f;
+  margin-top:9px;
 }
 
+/* STUDENTS */
 .student-list{
-margin-top:10px;
+  margin-top:10px;
 }
 
 .student{
-background:white;
-border:1px solid #dfebe5;
-border-radius:17px;
-padding:13px;
-margin-bottom:10px;
+  background:white;
+  border:1px solid #dfebe5;
+  border-radius:17px;
+  padding:13px;
+  margin-bottom:10px;
 }
 
 .student-head{
-display:flex;
-justify-content:space-between;
-align-items:center;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
 
 .student-name{
-font-weight:bold;
-color:#07583f;
-font-size:15px;
+  font-weight:bold;
+  color:#07583f;
+  font-size:15px;
 }
 
 .student-info{
-font-size:12px;
-color:#74847d;
-line-height:1.7;
-margin-top:5px;
+  font-size:12px;
+  color:#74847d;
+  line-height:1.7;
+  margin-top:5px;
 }
 
 .actions{
-display:flex;
-gap:6px;
-margin-top:8px;
+  display:flex;
+  gap:6px;
+  margin-top:8px;
 }
 
 .action{
-border:0;
-border-radius:9px;
-padding:7px 10px;
-font-size:11px;
+  border:0;
+  border-radius:9px;
+  padding:7px 10px;
+  font-size:11px;
+  cursor:pointer;
 }
 
 .edit{
-background:#e8f4ff;
-color:#17608c;
+  background:#e8f4ff;
+  color:#17608c;
 }
 
 .delete{
-background:#fff0f0;
-color:#b33a3a;
+  background:#fff0f0;
+  color:#b33a3a;
 }
 
 .search{
-width:100%;
-border:1px solid #d9e7e0;
-border-radius:13px;
-padding:12px;
-font-size:14px;
-margin-bottom:12px;
+  width:100%;
+  border:1px solid #d9e7e0;
+  border-radius:13px;
+  padding:12px;
+  font-size:14px;
+  margin-bottom:12px;
+  outline:none;
 }
 
 .empty{
-text-align:center;
-padding:25px 10px;
-color:#7c8c85;
-font-size:13px;
+  text-align:center;
+  padding:25px 10px;
+  color:#7c8c85;
+  font-size:13px;
 }
 
+/* STATS */
 .stat-box{
-display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:10px;
-margin-top:12px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin-top:12px;
 }
 
 .stat{
-background:#f0f8f4;
-padding:15px;
-border-radius:15px;
-text-align:center;
+  background:#f0f8f4;
+  padding:15px;
+  border-radius:15px;
+  text-align:center;
 }
 
 .stat strong{
-display:block;
-font-size:22px;
-color:#07583f;
+  display:block;
+  font-size:22px;
+  color:#07583f;
 }
 
 .info-box{
-background:#f0f8f4;
-padding:15px;
-border-radius:15px;
-line-height:1.8;
-font-size:13px;
-margin-bottom:10px;
+  background:#f0f8f4;
+  padding:15px;
+  border-radius:15px;
+  line-height:1.8;
+  font-size:13px;
+  margin-bottom:10px;
 }
 
+/* ATTENDANCE */
+.attendance-row{
+  background:white;
+  border:1px solid #dfebe5;
+  border-radius:15px;
+  padding:12px;
+  margin-bottom:9px;
+}
+
+.attendance-name{
+  color:#07583f;
+  font-weight:bold;
+  margin-bottom:8px;
+}
+
+.attendance-select{
+  width:100%;
+  padding:10px;
+  border:1px solid #d9e7e0;
+  border-radius:10px;
+  background:#fbfdfc;
+}
+
+/* RESPONSIVE */
 @media(max-width:360px){
-.brand h1{font-size:21px}
-.welcome h2{font-size:16px}
-.content{padding-left:11px;padding-right:11px}
+  .brand h1{
+    font-size:21px;
+  }
+
+  .welcome h2{
+    font-size:16px;
+  }
+
+  .content{
+    padding-left:11px;
+    padding-right:11px;
+  }
 }
 </style>
 </head>
@@ -482,877 +559,694 @@ margin-bottom:10px;
 <!-- HEADER -->
 <header class="header">
 
-<div class="top">
+  <div class="top">
 
-<button class="icon-btn" onclick="openMenu()">☰</button>
+    <button class="icon-btn" type="button" onclick="openMenu()">☰</button>
 
-<div class="brand">
-<h1>Hifz<span>Connect</span></h1>
-<p>হেফজ গার্ডিয়ান</p>
-</div>
+    <div class="brand">
+      <h1>Hifz<span>Connect</span></h1>
+      <p>হেফজ গার্ডিয়ান</p>
+    </div>
 
-<button class="icon-btn" onclick="showPage('notice')">🔔</button>
+    <button class="icon-btn" type="button" onclick="showPage('notice')">🔔</button>
 
-</div>
+  </div>
 
-<div class="welcome">
-<small>আসসালামু আলাইকুম</small>
-<h2>ওস্তাদ হাফেজ মোহাম্মদ মাহমুদ সাহেব</h2>
-</div>
+  <div class="welcome">
+    <small>আসসালামু আলাইকুম</small>
+    <h2>ওস্তাদ হাফেজ মোহাম্মদ মাহমুদ সাহেব</h2>
+  </div>
 
 </header>
 
 
-<!-- HOME PAGE -->
+<!-- HOME -->
 <main id="home" class="page active content">
 
-<div class="section-head">
-<h3>আজকের সারাংশ</h3>
-<span class="date" id="today"></span>
-</div>
+  <div class="section-head">
+    <h3>আজকের সারাংশ</h3>
+    <span class="date" id="today"></span>
+  </div>
 
-<div class="summary">
+  <div class="summary">
 
-<div class="card">
-<div class="emoji">👨‍🎓</div>
-<strong id="totalStudents">0</strong>
-<span>মোট ছাত্র</span>
-</div>
+    <div class="card">
+      <div class="emoji">👨‍🎓</div>
+      <strong id="totalStudents">0</strong>
+      <span>মোট ছাত্র</span>
+    </div>
 
-<div class="card">
-<div class="emoji">✅</div>
-<strong id="presentCount">0</strong>
-<span>উপস্থিত</span>
-</div>
+    <div class="card">
+      <div class="emoji">✅</div>
+      <strong id="presentCount">0</strong>
+      <span>উপস্থিত</span>
+    </div>
 
-<div class="card">
-<div class="emoji">📖</div>
-<strong id="progressCount">0</strong>
-<span>পড়া হয়েছে</span>
-</div>
+    <div class="card">
+      <div class="emoji">📖</div>
+      <strong id="progressCount">0</strong>
+      <span>পড়া হয়েছে</span>
+    </div>
 
-</div>
+  </div>
 
+  <h3 class="quick">দ্রুত কাজ</h3>
 
-<h3 class="quick">দ্রুত কাজ</h3>
+  <div class="grid">
 
-<div class="grid">
+    <div class="menu" onclick="openStudentManager()">
+      <div class="menu-icon">👨‍🎓</div>
+      <h4>শিক্ষার্থী</h4>
+      <p>ছাত্র যোগ ও তথ্য দেখুন</p>
+    </div>
 
-<div class="menu" onclick="openStudentManager()">
-<div class="menu-icon">👨‍🎓</div>
-<h4>শিক্ষার্থী</h4>
-<p>ছাত্র যোগ ও তথ্য দেখুন</p>
-</div>
+    <div class="menu" onclick="openAttendance()">
+      <div class="menu-icon">✅</div>
+      <h4>উপস্থিতি</h4>
+      <p>আজকের হাজিরা দিন</p>
+    </div>
 
-<div class="menu" onclick="openAttendance()">
-<div class="menu-icon">✅</div>
-<h4>উপস্থিতি</h4>
-<p>আজকের হাজিরা দিন</p>
-</div>
+    <div class="menu" onclick="openHifz()">
+      <div class="menu-icon">📚</div>
+      <h4>হিফজ অগ্রগতি</h4>
+      <p>সবক ও দৌরের অগ্রগতি</p>
+    </div>
 
-<div class="menu" onclick="openHifz()">
-<div class="menu-icon">📚</div>
-<h4>হিফজ অগ্রগতি</h4>
-<p>সবক ও দৌরের অগ্রগতি</p>
-</div>
+    <div class="menu" onclick="openParents()">
+      <div class="menu-icon">👨‍👩‍👦</div>
+      <h4>অভিভাবক</h4>
+      <p>অভিভাবকের তথ্য</p>
+    </div>
 
-<div class="menu" onclick="openParents()">
-<div class="menu-icon">👨‍👩‍👦</div>
-<h4>অভিভাবক</h4>
-<p>অভিভাবকের তথ্য</p>
-</div>
+    <div class="menu" onclick="openReport()">
+      <div class="menu-icon">📊</div>
+      <h4>রিপোর্ট</h4>
+      <p>দৈনিক ও মাসিক রিপোর্ট</p>
+    </div>
 
-<div class="menu" onclick="openReport()">
-<div class="menu-icon">📊</div>
-<h4>রিপোর্ট</h4>
-<p>দৈনিক ও মাসিক রিপোর্ট</p>
-</div>
+    <div class="menu" onclick="openIslamic()">
+      <div class="menu-icon">🕌</div>
+      <h4>ইসলামিক বিভাগ</h4>
+      <p>দোয়া, হাদিস ও আমল</p>
+    </div>
 
-<div class="menu" onclick="openIslamic()">
-<div class="menu-icon">🕌</div>
-<h4>ইসলামিক বিভাগ</h4>
-<p>দোয়া, হাদিস ও আমল</p>
-</div>
+    <div class="menu" onclick="openCalendar()">
+      <div class="menu-icon">📅</div>
+      <h4>ক্যালেন্ডার</h4>
+      <p>তারিখ ও অনুষ্ঠান</p>
+    </div>
 
-<div class="menu" onclick="openCalendar()">
-<div class="menu-icon">📅</div>
-<h4>ক্যালেন্ডার</h4>
-<p>তারিখ ও অনুষ্ঠান</p>
-</div>
+    <div class="menu" onclick="openSettings()">
+      <div class="menu-icon">⚙️</div>
+      <h4>সেটিংস</h4>
+      <p>অ্যাপের সেটিংস</p>
+    </div>
 
-<div class="menu" onclick="openSettings()">
-<div class="menu-icon">⚙️</div>
-<h4>সেটিংস</h4>
-<p>অ্যাপের সেটিংস</p>
-</div>
+  </div>
 
-</div>
+  <div class="progress">
 
+    <div class="progress-head">
+      <span>আজকের উপস্থিতি</span>
+      <strong id="progressPercent">0%</strong>
+    </div>
 
-<div class="progress">
+    <div class="bar">
+      <div class="fill" id="progressBar"></div>
+    </div>
 
-<div class="progress-head">
-<span>আজকের হিফজ অগ্রগতি</span>
-<strong id="progressPercent">0%</strong>
-</div>
+  </div>
 
-<div class="bar">
-<div class="fill" id="progressBar"></div>
-</div>
-
-</div>
-
-
-<div class="notice">
-
-<b>🔔 গুরুত্বপূর্ণ নোটিশ</b>
-
-<p>
-আজকের সবক ও দৌর সম্পন্ন করার পর
-শিক্ষার্থীদের অগ্রগতি আপডেট করুন।
-</p>
-
-</div>
+  <div class="notice">
+    <b>🔔 গুরুত্বপূর্ণ নোটিশ</b>
+    <p>
+      আজকের সবক ও দৌর সম্পন্ন করার পর
+      শিক্ষার্থীদের অগ্রগতি আপডেট করুন।
+    </p>
+  </div>
 
 </main>
 
 
-<!-- OTHER PAGES -->
-
+<!-- NOTICE PAGE -->
 <main id="notice" class="page content">
-<div class="section-head">
-<h3>📢 নোটিশ</h3>
-</div>
 
-<div class="info-box">
-বর্তমানে কোনো নতুন নোটিশ নেই।
-</div>
+  <div class="section-head">
+    <h3>📢 নোটিশ</h3>
+  </div>
+
+  <div class="info-box">
+    বর্তমানে কোনো নতুন নোটিশ নেই।
+  </div>
+
 </main>
 
 
+<!-- REPORT PAGE -->
 <main id="report" class="page content">
-<div class="section-head">
-<h3>📊 রিপোর্ট</h3>
-</div>
 
-<div class="stat-box">
-<div class="stat">
-<strong id="reportStudents">0</strong>
-মোট শিক্ষার্থী
-</div>
+  <div class="section-head">
+    <h3>📊 রিপোর্ট</h3>
+  </div>
 
-<div class="stat">
-<strong id="reportPresent">0</strong>
-আজ উপস্থিত
-</div>
-</div>
+  <div class="stat-box">
 
-<div class="info-box" style="margin-top:12px">
-এই রিপোর্টের তথ্য আপনার ফোনেই অফলাইনে সংরক্ষিত থাকবে।
-</div>
+    <div class="stat">
+      <strong id="reportStudents">0</strong>
+      মোট শিক্ষার্থী
+    </div>
+
+    <div class="stat">
+      <strong id="reportPresent">0</strong>
+      আজ উপস্থিত
+    </div>
+
+  </div>
+
+  <div class="info-box" style="margin-top:12px">
+    এই রিপোর্টের তথ্য আপনার ফোনে অফলাইনে সংরক্ষিত থাকবে।
+  </div>
+
 </main>
 
 
+<!-- SETTINGS PAGE -->
 <main id="settings" class="page content">
-<div class="section-head">
-<h3>⚙️ সেটিংস</h3>
-</div>
 
-<div class="info-box">
-<b>অ্যাপ:</b> HifzConnect<br>
-<b>ধরণ:</b> Offline First<br>
-<b>ওস্তাদ:</b> হাফেজ মোহাম্মদ মাহমুদ সাহেব
-</div>
+  <div class="section-head">
+    <h3>⚙️ সেটিংস</h3>
+  </div>
 
-<button class="save-btn" onclick="backupData()">
-💾 ডেটা ব্যাকআপ
-</button>
+  <div class="info-box">
+    <b>অ্যাপ:</b> HifzConnect<br>
+    <b>ধরণ:</b> Offline First<br>
+    <b>ওস্তাদ:</b> হাফেজ মোহাম্মদ মাহমুদ সাহেব
+  </div>
 
-<button class="save-btn secondary" onclick="clearAllData()">
-⚠️ সব ডেটা মুছে ফেলুন
-</button>
+  <button class="save-btn" type="button" onclick="backupData()">
+    💾 ডেটা ব্যাকআপ
+  </button>
+
+  <button class="save-btn secondary" type="button" onclick="clearAllData()">
+    ⚠️ সব ডেটা মুছে ফেলুন
+  </button>
+
 </main>
 
 
 <!-- BOTTOM NAV -->
-
 <nav class="bottom">
 
-<div class="nav active" onclick="nav(this,'home')">
-<span class="nav-icon">🏠</span>
-হোম
-</div>
+  <div class="nav active" onclick="nav(this,'home')">
+    <span class="nav-icon">🏠</span>
+    হোম
+  </div>
 
-<div class="nav" onclick="nav(this,'notice')">
-<span class="nav-icon">🔔</span>
-নোটিশ
-</div>
+  <div class="nav" onclick="nav(this,'notice')">
+    <span class="nav-icon">🔔</span>
+    নোটিশ
+  </div>
 
-<div class="nav" onclick="nav(this,'report')">
-<span class="nav-icon">📊</span>
-রিপোর্ট
-</div>
+  <div class="nav" onclick="nav(this,'report')">
+    <span class="nav-icon">📊</span>
+    রিপোর্ট
+  </div>
 
-<div class="nav" onclick="nav(this,'settings')">
-<span class="nav-icon">⚙️</span>
-সেটিংস
-</div>
+  <div class="nav" onclick="nav(this,'settings')">
+    <span class="nav-icon">⚙️</span>
+    সেটিংস
+  </div>
 
 </nav>
 
 </div>
 
 
-<!-- STUDENT MODAL -->
+<!-- =========================
+     STUDENT MODAL
+========================= -->
 
 <div class="modal" id="studentModal">
 
-<div class="modal-box">
+  <div class="modal-box">
 
-<div class="modal-title">
-<h3>👨‍🎓 শিক্ষার্থী</h3>
-<button class="close" onclick="closeModal('studentModal')">×</button>
+    <div class="modal-title">
+      <h3>👨‍🎓 শিক্ষার্থী</h3>
+      <button class="close" type="button" onclick="closeModal('studentModal')">×</button>
+    </div>
+
+    <button class="save-btn" type="button" onclick="showStudentForm()">
+      ➕ শিক্ষার্থী যোগ করুন
+    </button>
+
+    <br><br>
+
+    <input
+      class="search"
+      id="studentSearch"
+      type="text"
+      placeholder="🔍 শিক্ষার্থীর নাম খুঁজুন..."
+      oninput="renderStudents()"
+    >
+
+    <div class="student-list" id="studentList"></div>
+
+  </div>
+
 </div>
 
-<button class="save-btn" onclick="showStudentForm()">
-➕ শিক্ষার্থী যোগ করুন
-</button>
 
-<br><br>
-
-<input
-class="search"
-id="studentSearch"
-placeholder="🔍 শিক্ষার্থীর নাম খুঁজুন..."
-oninput="renderStudents()">
-
-<div class="student-list" id="studentList"></div>
-
-</div>
-</div>
-
-
-<!-- STUDENT FORM -->
+<!-- =========================
+     STUDENT FORM MODAL
+========================= -->
 
 <div class="modal" id="studentFormModal">
 
-<div class="modal-box">
+  <div class="modal-box">
 
-<div class="modal-title">
-<h3 id="formTitle">➕ শিক্ষার্থী যোগ করুন</h3>
-<button class="close" onclick="closeModal('studentFormModal')">×</button>
-</div>
+    <div class="modal-title">
+      <h3 id="formTitle">➕ শিক্ষার্থী যোগ করুন</h3>
+      <button class="close" type="button" onclick="closeModal('studentFormModal')">×</button>
+    </div>
 
-<form id="studentForm">
+    <form id="studentForm">
 
-<input type="hidden" id="studentId">
+      <input type="hidden" id="studentId">
 
-<div class="form-group">
-<label>শিক্ষার্থীর নাম *</label>
-<input id="studentName" required>
-</div>
+      <div class="form-group">
+        <label for="studentName">শিক্ষার্থীর নাম *</label>
+        <input id="studentName" type="text" required>
+      </div>
 
-<div class="form-group">
-<label>পিতার নাম</label>
-<input id="fatherName">
-</div>
+      <div class="form-group">
+        <label for="fatherName">পিতার নাম</label>
+        <input id="fatherName" type="text">
+      </div>
 
-<div class="form-group">
-<label>অভিভাবকের মোবাইল নম্বর</label>
-<input id="guardianPhone" type="tel">
-</div>
+      <div class="form-group">
+        <label for="guardianPhone">অভিভাবকের মোবাইল নম্বর</label>
+        <input id="guardianPhone" type="tel">
+      </div>
 
-<div class="form-group">
-<label>বয়স</label>
-<input id="studentAge" type="number" min="1">
-</div>
+      <div class="form-group">
+        <label for="studentAge">বয়স</label>
+        <input id="studentAge" type="number" min="1">
+      </div>
 
-<div class="form-group">
-<label>কত পারা/সূরা পর্যন্ত হিফজ হয়েছে</label>
-<input id="hifzLevel" placeholder="যেমন: ৫ পারা / সূরা বাকারাহ">
-</div>
+      <div class="form-group">
+        <label for="hifzLevel">কত পারা/সূরা পর্যন্ত হিফজ হয়েছে</label>
+        <input
+          id="hifzLevel"
+          type="text"
+          placeholder="যেমন: ৫ পারা / সূরা বাকারাহ"
+        >
+      </div>
 
-<div class="form-group">
-<label>ভর্তির তারিখ</label>
-<input id="admissionDate" type="date">
-</div>
+      <div class="form-group">
+        <label for="admissionDate">ভর্তির তারিখ</label>
+        <input id="admissionDate" type="date">
+      </div>
 
-<div class="form-group">
-<label>ঠিকানা</label>
-<textarea id="address"></textarea>
-</div>
+      <div class="form-group">
+        <label for="address">ঠিকানা</label>
+        <textarea id="address"></textarea>
+      </div>
 
-<div class="form-group">
-<label>অন্যান্য তথ্য</label>
-<textarea id="otherInfo"></textarea>
-</div>
+      <div class="form-group">
+        <label for="otherInfo">অন্যান্য তথ্য</label>
+        <textarea id="otherInfo"></textarea>
+      </div>
 
-<button class="save-btn" type="submit">
-💾 সংরক্ষণ করুন
-</button>
+      <button class="save-btn" type="submit">
+        💾 সংরক্ষণ করুন
+      </button>
 
-</form>
+    </form>
 
-</div>
+  </div>
+
 </div>
 
 
 <script>
 
-/* =========================
-   DATA
-========================= */
-
-let students = JSON.parse(localStorage.getItem("hifz_students") || "[]");
-
-let attendance = JSON.parse(localStorage.getItem("hifz_attendance") || "{}");
+/* =====================================
+   HIFZCONNECT - MAIN JAVASCRIPT
+===================================== */
 
 
-/* =========================
-   DATE
-========================= */
+/* ---------- DATA ---------- */
 
-function getToday(){
-return new Date().toISOString().split("T")[0];
-}
+let students = [];
 
-document.getElementById("today").innerText =
-new Date().toLocaleDateString("bn-BD");
+let attendance = {};
 
 
-/* =========================
-   PAGE NAVIGATION
-========================= */
+/* ---------- LOAD DATA ---------- */
 
-function nav(element,page){
+function loadData(){
 
-document.querySelectorAll(".nav")
-.forEach(x=>x.classList.remove("active"));
+  try{
+    students = JSON.parse(
+      localStorage.getItem("hifz_students") || "[]"
+    );
 
-element.classList.add("active");
+    attendance = JSON.parse(
+      localStorage.getItem("hifz_attendance") || "{}"
+    );
 
-showPage(page);
-}
+    if(!Array.isArray(students)){
+      students = [];
+    }
 
-function showPage(page){
+    if(typeof attendance !== "object" || attendance === null){
+      attendance = {};
+    }
 
-document.querySelectorAll(".page")
-.forEach(x=>x.classList.remove("active"));
+  }catch(error){
 
-let target=document.getElementById(page);
+    console.error("ডেটা লোড সমস্যা:",error);
 
-if(target){
-target.classList.add("active");
-}
+    students = [];
+    attendance = {};
 
-window.scrollTo(0,0);
-}
-
-
-/* =========================
-   MODAL
-========================= */
-
-function closeModal(id){
-document.getElementById(id).style.display="none";
-}
-
-function openModal(id){
-document.getElementById(id).style.display="flex";
-}
-
-
-/* =========================
-   STUDENTS
-========================= */
-
-function openStudentManager(){
-
-openModal("studentModal");
-
-renderStudents();
+  }
 
 }
 
-function showStudentForm(){
 
-document.getElementById("studentForm").reset();
-
-document.getElementById("studentId").value="";
-
-document.getElementById("formTitle").innerText=
-"➕ শিক্ষার্থী যোগ করুন";
-
-closeModal("studentModal");
-
-openModal("studentFormModal");
-
-}
+/* ---------- SAVE DATA ---------- */
 
 function saveStudents(){
 
-localStorage.setItem(
-"hifz_students",
-JSON.stringify(students)
-);
+  localStorage.setItem(
+    "hifz_students",
+    JSON.stringify(students)
+  );
 
-updateDashboard();
+  updateDashboard();
 
 }
 
+
+function saveAttendance(){
+
+  localStorage.setItem(
+    "hifz_attendance",
+    JSON.stringify(attendance)
+  );
+
+  updateDashboard();
+
+}
+
+
+/* ---------- DATE ---------- */
+
+function getToday(){
+
+  let d = new Date();
+
+  let year = d.getFullYear();
+
+  let month = String(d.getMonth()+1).padStart(2,"0");
+
+  let day = String(d.getDate()).padStart(2,"0");
+
+  return year + "-" + month + "-" + day;
+
+}
+
+
+function showToday(){
+
+  let today = document.getElementById("today");
+
+  if(today){
+
+    today.innerText =
+      new Date().toLocaleDateString(
+        "bn-BD",
+        {
+          year:"numeric",
+          month:"long",
+          day:"numeric"
+        }
+      );
+
+  }
+
+}
+
+
+/* ---------- PAGE NAVIGATION ---------- */
+
+function nav(element,page){
+
+  document.querySelectorAll(".nav")
+    .forEach(function(item){
+      item.classList.remove("active");
+    });
+
+  if(element){
+    element.classList.add("active");
+  }
+
+  showPage(page);
+
+}
+
+
+function showPage(page){
+
+  document.querySelectorAll(".page")
+    .forEach(function(item){
+      item.classList.remove("active");
+    });
+
+  let target = document.getElementById(page);
+
+  if(target){
+    target.classList.add("active");
+  }
+
+  window.scrollTo(0,0);
+
+}
+
+
+/* ---------- MODAL ---------- */
+
+function openModal(id){
+
+  let modal = document.getElementById(id);
+
+  if(modal){
+    modal.classList.add("show");
+  }
+
+}
+
+
+function closeModal(id){
+
+  let modal = document.getElementById(id);
+
+  if(modal){
+    modal.classList.remove("show");
+  }
+
+}
+
+
+/* ---------- STUDENT MANAGER ---------- */
+
+function openStudentManager(){
+
+  let search = document.getElementById("studentSearch");
+
+  if(search){
+    search.value = "";
+  }
+
+  openModal("studentModal");
+
+  renderStudents();
+
+}
+
+
+/* ---------- NEW STUDENT FORM ---------- */
+
+function showStudentForm(){
+
+  let form = document.getElementById("studentForm");
+
+  if(form){
+    form.reset();
+  }
+
+  document.getElementById("studentId").value = "";
+
+  document.getElementById("formTitle").innerText =
+    "➕ শিক্ষার্থী যোগ করুন";
+
+  closeModal("studentModal");
+
+  openModal("studentFormModal");
+
+}
+
+
+/* ---------- SAVE STUDENT ---------- */
 
 document.getElementById("studentForm")
-.addEventListener("submit",function(e){
+  .addEventListener("submit",function(event){
 
-e.preventDefault();
+    event.preventDefault();
 
-let id=document.getElementById("studentId").value;
+    let name =
+      document.getElementById("studentName")
+        .value.trim();
 
-let student={
+    if(!name){
 
-id:id || Date.now().toString(),
+      alert("শিক্ষার্থীর নাম লিখুন।");
 
-name:document.getElementById("studentName").value.trim(),
+      return;
 
-father:document.getElementById("fatherName").value.trim(),
+    }
 
-phone:document.getElementById("guardianPhone").value.trim(),
+    let id =
+      document.getElementById("studentId").value;
 
-age:document.getElementById("studentAge").value,
+    let student = {
 
-hifz:document.getElementById("hifzLevel").value.trim(),
+      id: id || String(Date.now()),
 
-admission:document.getElementById("admissionDate").value,
+      name: name,
 
-address:document.getElementById("address").value.trim(),
+      father:
+        document.getElementById("fatherName")
+          .value.trim(),
 
-other:document.getElementById("otherInfo").value.trim()
+      phone:
+        document.getElementById("guardianPhone")
+          .value.trim(),
 
-};
+      age:
+        document.getElementById("studentAge")
+          .value,
+
+      hifz:
+        document.getElementById("hifzLevel")
+          .value.trim(),
+
+      admission:
+        document.getElementById("admissionDate")
+          .value,
+
+      address:
+        document.getElementById("address")
+          .value.trim(),
+
+      other:
+        document.getElementById("otherInfo")
+          .value.trim()
+
+    };
 
 
-if(id){
+    if(id){
 
-let index=students.findIndex(x=>x.id===id);
+      let index =
+        students.findIndex(function(item){
+          return item.id === id;
+        });
 
-if(index!==-1){
-students[index]=student;
-}
+      if(index !== -1){
 
-}else{
+        students[index] = student;
 
-students.push(student);
+      }
 
-}
+    }else{
 
-saveStudents();
+      students.push(student);
 
-closeModal("studentFormModal");
+    }
 
-openStudentManager();
 
-});
+    saveStudents();
 
+    closeModal("studentFormModal");
+
+    openStudentManager();
+
+    alert("শিক্ষার্থীর তথ্য সফলভাবে সংরক্ষণ হয়েছে।");
+
+  });
+
+
+/* ---------- SHOW STUDENTS ---------- */
 
 function renderStudents(){
 
-let list=document.getElementById("studentList");
+  let list =
+    document.getElementById("studentList");
 
-let search=
-(document.getElementById("studentSearch")?.value || "")
-.toLowerCase();
+  if(!list){
+    return;
+  }
 
-let filtered=students.filter(s=>
-s.name.toLowerCase().includes(search)
-);
+  let searchInput =
+    document.getElementById("studentSearch");
 
-if(filtered.length===0){
+  let search =
+    searchInput
+      ? searchInput.value.trim().toLowerCase()
+      : "";
 
-list.innerHTML=
-'<div class="empty">কোনো শিক্ষার্থী পাওয়া যায়নি।<br>উপরের “শিক্ষার্থী যোগ করুন” বাটনে চাপুন।</div>';
 
-return;
+  let filtered =
+    students.filter(function(student){
 
-}
+      return String(student.name || "")
+        .toLowerCase()
+        .includes(search);
 
-list.innerHTML=filtered.map(s=>`
+    });
 
-<div class="student">
 
-<div class="student-head">
+  if(filtered.length === 0){
 
-<div class="student-name">
-${escapeHTML(s.name)}
-</div>
+    list.innerHTML =
+      '<div class="empty">' +
+      'কোনো শিক্ষার্থী পাওয়া যায়নি।<br><br>' +
+      'উপরের “শিক্ষার্থী যোগ করুন” বাটনে চাপুন।' +
+      '</div>';
 
-</div>
+    return;
 
-<div class="student-info">
+  }
 
-পিতা: ${escapeHTML(s.father || "দেওয়া হয়নি")}<br>
 
-মোবাইল: ${escapeHTML(s.phone || "দেওয়া হয়নি")}<br>
+  list.innerHTML =
+    filtered.map(function(student){
 
-বয়স: ${escapeHTML(s.age || "দেওয়া হয়নি")}<br>
+      return `
 
-হিফজ: ${escapeHTML(s.hifz || "দেওয়া হয়নি")}
+        <div class="student">
 
-</div>
+          <div class="student-head">
 
-<div class="actions">
+            <div class="student-name">
+              ${escapeHTML(student.name)}
+            </div>
 
-<button class="action edit"
-onclick="editStudent('${s.id}')">
-✏️ এডিট
-</button>
+          </div>
 
-<button class="action delete"
-onclick="deleteStudent('${s.id}')">
-🗑️ মুছুন
-</button>
+          <div class="student-info">
 
-</div>
-
-</div>
-
-`).join("");
-
-}
-
-
-function editStudent(id){
-
-let s=students.find(x=>x.id===id);
-
-if(!s)return;
-
-closeModal("studentModal");
-
-document.getElementById("formTitle").innerText=
-"✏️ শিক্ষার্থীর তথ্য পরিবর্তন";
-
-document.getElementById("studentId").value=s.id;
-
-document.getElementById("studentName").value=s.name || "";
-
-document.getElementById("fatherName").value=s.father || "";
-
-document.getElementById("guardianPhone").value=s.phone || "";
-
-document.getElementById("studentAge").value=s.age || "";
-
-document.getElementById("hifzLevel").value=s.hifz || "";
-
-document.getElementById("admissionDate").value=s.admission || "";
-
-document.getElementById("address").value=s.address || "";
-
-document.getElementById("otherInfo").value=s.other || "";
-
-openModal("studentFormModal");
-
-}
-
-
-function deleteStudent(id){
-
-if(!confirm("এই শিক্ষার্থীকে মুছে ফেলতে চান?"))return;
-
-students=students.filter(x=>x.id!==id);
-
-saveStudents();
-
-renderStudents();
-
-}
-
-
-/* =========================
-   ATTENDANCE
-========================= */
-
-function openAttendance(){
-
-if(students.length===0){
-
-alert("আগে অন্তত একজন শিক্ষার্থী যোগ করুন।");
-
-openStudentManager();
-
-return;
-
-}
-
-let html=students.map(s=>`
-
-<div class="student">
-
-<div class="student-name">
-${escapeHTML(s.name)}
-</div>
-
-<div style="margin-top:8px">
-
-<select
-onchange="setAttendance('${s.id}',this.value)"
-style="width:100%;padding:10px;border:1px solid #d9e7e0;border-radius:10px">
-
-<option value="">উপস্থিতি নির্বাচন করুন</option>
-
-<option value="present"
-${attendance[getToday()+"_"+s.id]==="present"?"selected":""}>
-✅ উপস্থিত
-</option>
-
-<option value="absent"
-${attendance[getToday()+"_"+s.id]==="absent"?"selected":""}>
-❌ অনুপস্থিত
-</option>
-
-</select>
-
-</div>
-
-</div>
-
-`).join("");
-
-showCustomModal(
-"আজকের উপস্থিতি",
-html
-);
-
-}
-
-
-function setAttendance(id,value){
-
-if(!value)return;
-
-attendance[getToday()+"_"+id]=value;
-
-localStorage.setItem(
-"hifz_attendance",
-JSON.stringify(attendance)
-);
-
-updateDashboard();
-
-}
-
-
-/* =========================
-   HIFZ
-========================= */
-
-function openHifz(){
-
-let html=`
-
-<div class="info-box">
-<b>হিফজ অগ্রগতি</b><br>
-পরবর্তী ধাপে প্রতিটি শিক্ষার্থীর
-সবক, আমুখতা এবং দৌর আলাদাভাবে
-সংরক্ষণ করা যাবে।
-</div>
-
-`;
-
-showCustomModal("📚 হিফজ অগ্রগতি",html);
-
-}
-
-
-/* =========================
-   PARENTS
-========================= */
-
-function openParents(){
-
-let html="";
-
-if(students.length===0){
-
-html='<div class="empty">কোনো শিক্ষার্থী নেই।</div>';
-
-}else{
-
-html=students.map(s=>`
-
-<div class="student">
-
-<div class="student-name">
-${escapeHTML(s.name)}
-</div>
-
-<div class="student-info">
-
-অভিভাবক: ${escapeHTML(s.father || "দেওয়া হয়নি")}<br>
-
-মোবাইল:
-${escapeHTML(s.phone || "দেওয়া হয়নি")}
-
-</div>
-
-</div>
-
-`).join("");
-
-}
-
-showCustomModal("👨‍👩‍👦 অভিভাবক",html);
-
-}
-
-
-/* =========================
-   REPORT
-========================= */
-
-function openReport(){
-
-updateDashboard();
-
-showCustomModal(
-"📊 রিপোর্ট",
-`
-<div class="stat-box">
-
-<div class="stat">
-<strong>${students.length}</strong>
-মোট শিক্ষার্থী
-</div>
-
-<div class="stat">
-<strong>${getPresentCount()}</strong>
-আজ উপস্থিত
-</div>
-
-</div>
-
-<div class="info-box" style="margin-top:12px">
-ডেটা আপনার ফোনের ব্রাউজার স্টোরেজে
-অফলাইনে সংরক্ষিত হচ্ছে।
-</div>
-`
-);
-
-}
-
-
-/* =========================
-   ISLAMIC
-========================= */
-
-function openIslamic(){
-
-showCustomModal(
-"🕌 ইসলামিক বিভাগ",
-`
-<div class="info-box">
-<b>📿 সকাল-সন্ধ্যার আমল</b><br>
-আল্লাহর যিকির ও দোয়া নিয়মিত করার চেষ্টা করুন।
-</div>
-
-<div class="info-box">
-<b>📖 কুরআন</b><br>
-প্রতিদিন নিয়মিত কুরআন তিলাওয়াত ও হিফজের
-মুরাজাআহ করুন।
-</div>
-
-<div class="info-box">
-<b>🤲 দোয়া</b><br>
-رَبِّ زِدْنِي عِلْمًا<br>
-হে আমার রব, আমার জ্ঞান বৃদ্ধি করুন।
-</div>
-`
-);
-
-}
-
-
-/* =========================
-   CALENDAR
-========================= */
-
-function openCalendar(){
-
-let d=new Date();
-
-showCustomModal(
-"📅 ক্যালেন্ডার",
-`
-<div class="info-box">
-
-<b>আজকের তারিখ</b><br>
-
-${d.toLocaleDateString("bn-BD",{
-year:"numeric",
-month:"long",
-day:"numeric"
-})}
-
-</div>
-`
-);
-
-}
-
-
-/* =========================
-   SETTINGS
-========================= */
-
-function openSettings(){
-
-showPage("settings");
-
-}
-
-
-/* =========================
-   MENU
-========================= */
-
-function openMenu(){
-
-showCustomModal(
-"☰ মেনু",
-`
-<button class="save-btn" onclick="openStudentManager();closeCustomModal()">
-👨‍🎓 শিক্ষার্থী
-</button>
-
-<br><br>
-
-<button class="save-btn" onclick="openAttendance();closeCustomModal()">
-✅ উপস্থিতি
-</button>
-
-<br><br>
-
-<button class="save-btn" onclick="openHifz();closeCustomModal()">
-📚 হিফজ অগ্রগতি
-</button>
-`
-);
-
-}
-
-
-/* =========================
-   CUSTOM MODAL
-========================= */
-
-function showCustomModal(title,content){
-
-let old=document.getElementById("customModal");
-
-if(old)old.remove();
-
-let div=document.createElement("div");
-
-div.className="modal";
-div.id="customModal";
-
-div.style.display="flex
+            পিতা:
+            ${escapeHT
