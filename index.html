@@ -3,552 +3,390 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
 <meta name="theme-color" content="#07583f">
-<title>HifzConnect - হেফজ গার্ডিয়ান</title>
+
+<title>হেফজ কন্টাক — সহজ যোগাযোগ</title>
 
 <style>
 *{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html,body{
+    width:100%;
+    min-height:100%;
 }
 
 body{
-  font-family:"Noto Sans Bengali","Arial",sans-serif;
-  background:#edf7f2;
-  color:#17382d;
-  overflow-x:hidden;
-}
-
-button,input,textarea,select{
-  font-family:inherit;
+    font-family:"Noto Sans Bengali","Noto Sans",Arial,sans-serif;
+    background:#edf7f2;
+    color:#17382d;
+    overflow-x:hidden;
 }
 
 .app{
-  width:100%;
-  max-width:480px;
-  min-height:100vh;
-  margin:auto;
-  background:#f8fcfa;
+    width:100%;
+    max-width:480px;
+    min-height:100vh;
+    margin:auto;
+    background:#f8fcfa;
 }
 
-/* HEADER */
+/* =========================
+   HEADER
+========================= */
+
 .header{
-  background:linear-gradient(145deg,#07583f,#12845f);
-  color:white;
-  padding:20px 16px 25px;
-  border-radius:0 0 30px 30px;
+    background:linear-gradient(145deg,#07583f,#12845f);
+    color:white;
+    padding:18px 16px 25px;
+    border-radius:0 0 30px 30px;
 }
 
 .top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo{
+    width:50px;
+    height:50px;
+    border-radius:15px;
+    background:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:27px;
+    box-shadow:0 4px 12px rgba(0,0,0,.15);
 }
 
 .brand{
-  text-align:center;
-  flex:1;
+    flex:1;
 }
 
 .brand h1{
-  font-family:Arial,sans-serif;
-  font-size:24px;
-  font-weight:bold;
+    font-family:Arial,sans-serif;
+    font-size:25px;
+    font-weight:bold;
 }
 
 .brand h1 span{
-  color:#e5b83e;
+    color:#e5b83e;
 }
 
 .brand p{
-  font-size:12px;
-  color:#f4d16a;
+    margin-top:3px;
+    color:#f4d16a;
+    font-size:13px;
 }
 
-.icon-btn{
-  width:42px;
-  height:42px;
-  border:0;
-  border-radius:13px;
-  background:rgba(255,255,255,.13);
-  color:white;
-  font-size:21px;
-  cursor:pointer;
+.header-title{
+    margin-top:22px;
 }
 
-.welcome{
-  margin-top:20px;
-  background:white;
-  color:#17382d;
-  padding:17px;
-  border-radius:23px 23px 23px 8px;
+.header-title small{
+    color:#d9eee6;
+    font-size:13px;
 }
 
-.welcome small{
-  color:#087253;
+.header-title h2{
+    margin-top:5px;
+    font-size:20px;
+    line-height:1.6;
 }
 
-.welcome h2{
-  font-size:18px;
-  line-height:1.6;
-  margin-top:4px;
-}
+/* =========================
+   CONTENT
+========================= */
 
-/* CONTENT */
 .content{
-  padding:18px 15px 100px;
-}
-
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:13px;
-}
-
-.section-head h3{
-  font-size:19px;
-}
-
-.date{
-  font-size:12px;
-  color:#75847e;
-}
-
-.summary{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:9px;
-}
-
-.card{
-  background:white;
-  border:1px solid #dfebe5;
-  border-radius:19px;
-  padding:14px 5px;
-  text-align:center;
-  box-shadow:0 5px 15px rgba(0,0,0,.05);
-}
-
-.card .emoji{
-  font-size:23px;
-}
-
-.card strong{
-  display:block;
-  font-size:22px;
-  color:#075d43;
-  margin-top:4px;
-}
-
-.card span{
-  font-size:11px;
-  color:#71817b;
-}
-
-.quick{
-  margin-top:23px;
-  margin-bottom:12px;
-  font-size:19px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:11px;
-}
-
-.menu{
-  background:white;
-  border:1px solid #dfebe5;
-  border-radius:20px;
-  padding:16px 13px;
-  min-height:120px;
-  box-shadow:0 5px 15px rgba(0,0,0,.05);
-  cursor:pointer;
-  transition:.15s;
-}
-
-.menu:active{
-  transform:scale(.97);
-}
-
-.menu-icon{
-  width:46px;
-  height:46px;
-  border-radius:14px;
-  background:#e8f6ef;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:24px;
-  margin-bottom:8px;
-}
-
-.menu h4{
-  font-size:15px;
-}
-
-.menu p{
-  font-size:11px;
-  color:#788981;
-  margin-top:3px;
-}
-
-/* PROGRESS */
-.progress{
-  margin-top:18px;
-  background:white;
-  border:1px solid #dfebe5;
-  border-radius:20px;
-  padding:17px;
-}
-
-.progress-head{
-  display:flex;
-  justify-content:space-between;
-  margin-bottom:10px;
-}
-
-.progress-head strong{
-  color:#087354;
-}
-
-.bar{
-  height:9px;
-  background:#e6eee9;
-  border-radius:20px;
-  overflow:hidden;
-}
-
-.fill{
-  height:100%;
-  width:0%;
-  background:linear-gradient(90deg,#087354,#ddb33b);
-  transition:.3s;
-}
-
-/* NOTICE */
-.notice{
-  margin-top:17px;
-  background:#fff9e8;
-  border:1px solid #f0dda8;
-  border-radius:20px;
-  padding:15px;
-}
-
-.notice b{
-  color:#725a17;
-}
-
-.notice p{
-  font-size:12px;
-  line-height:1.7;
-  margin-top:6px;
-  color:#756b4c;
-}
-
-/* BOTTOM */
-.bottom{
-  position:fixed;
-  bottom:0;
-  left:50%;
-  transform:translateX(-50%);
-  width:100%;
-  max-width:480px;
-  height:70px;
-  background:#07583f;
-  border-radius:23px 23px 0 0;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  z-index:50;
-  padding-top:7px;
-}
-
-.nav{
-  color:#dcebe5;
-  text-align:center;
-  font-size:11px;
-  cursor:pointer;
-}
-
-.nav-icon{
-  display:block;
-  font-size:22px;
-  line-height:30px;
-}
-
-.nav.active{
-  color:#f0c650;
-  font-weight:bold;
-}
-
-/* PAGES */
-.page{
-  display:none;
-}
-
-.page.active{
-  display:block;
-}
-
-/* MODAL */
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.48);
-  z-index:100;
-  align-items:flex-end;
-  justify-content:center;
-}
-
-.modal.show{
-  display:flex;
-}
-
-.modal-box{
-  width:100%;
-  max-width:480px;
-  max-height:92vh;
-  overflow:auto;
-  background:white;
-  border-radius:28px 28px 0 0;
-  padding:22px 17px 30px;
-  animation:slideUp .2s ease;
-}
-
-@keyframes slideUp{
-  from{
-    transform:translateY(100%);
-  }
-  to{
-    transform:translateY(0);
-  }
-}
-
-.modal-title{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:16px;
-}
-
-.modal-title h3{
-  color:#07583f;
-  font-size:20px;
-}
-
-.close{
-  border:0;
-  background:#edf5f1;
-  color:#07583f;
-  border-radius:10px;
-  font-size:22px;
-  width:38px;
-  height:38px;
-  cursor:pointer;
-}
-
-/* FORM */
-.form-group{
-  margin-bottom:13px;
-}
-
-.form-group label{
-  display:block;
-  font-size:13px;
-  font-weight:bold;
-  margin-bottom:5px;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select{
-  width:100%;
-  border:1px solid #d9e7e0;
-  border-radius:12px;
-  padding:12px;
-  font-size:14px;
-  outline:none;
-  background:#fbfdfc;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus{
-  border-color:#087354;
-}
-
-.form-group textarea{
-  min-height:75px;
-  resize:vertical;
-}
-
-.save-btn{
-  width:100%;
-  border:0;
-  background:#07583f;
-  color:white;
-  padding:13px;
-  border-radius:13px;
-  font-size:15px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.save-btn:active{
-  transform:scale(.98);
-}
-
-.secondary{
-  background:#eaf5ef;
-  color:#07583f;
-  margin-top:9px;
-}
-
-/* STUDENTS */
-.student-list{
-  margin-top:10px;
-}
-
-.student{
-  background:white;
-  border:1px solid #dfebe5;
-  border-radius:17px;
-  padding:13px;
-  margin-bottom:10px;
-}
-
-.student-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.student-name{
-  font-weight:bold;
-  color:#07583f;
-  font-size:15px;
-}
-
-.student-info{
-  font-size:12px;
-  color:#74847d;
-  line-height:1.7;
-  margin-top:5px;
-}
-
-.actions{
-  display:flex;
-  gap:6px;
-  margin-top:8px;
-}
-
-.action{
-  border:0;
-  border-radius:9px;
-  padding:7px 10px;
-  font-size:11px;
-  cursor:pointer;
-}
-
-.edit{
-  background:#e8f4ff;
-  color:#17608c;
-}
-
-.delete{
-  background:#fff0f0;
-  color:#b33a3a;
+    padding:18px 15px 30px;
 }
 
 .search{
-  width:100%;
-  border:1px solid #d9e7e0;
-  border-radius:13px;
-  padding:12px;
-  font-size:14px;
-  margin-bottom:12px;
-  outline:none;
+    width:100%;
+    padding:14px 15px;
+    border:1px solid #d7e7df;
+    border-radius:15px;
+    background:white;
+    font-size:15px;
+    outline:none;
+    box-shadow:0 4px 14px rgba(0,0,0,.04);
+}
+
+.add-btn{
+    width:100%;
+    margin-top:14px;
+    border:0;
+    border-radius:15px;
+    padding:14px;
+    background:#07583f;
+    color:white;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.add-btn:active{
+    transform:scale(.98);
+}
+
+.count{
+    margin:14px 2px 10px;
+    color:#71817b;
+    font-size:13px;
+}
+
+/* =========================
+   STUDENT CARD
+========================= */
+
+.student{
+    background:white;
+    border:1px solid #dfebe5;
+    border-radius:18px;
+    padding:14px;
+    margin-bottom:11px;
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
+}
+
+.student-head{
+    display:flex;
+    align-items:center;
+    gap:11px;
+}
+
+.avatar{
+    width:45px;
+    height:45px;
+    border-radius:14px;
+    background:#e7f5ed;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:23px;
+}
+
+.student-name{
+    font-size:17px;
+    font-weight:bold;
+    color:#07583f;
+}
+
+.info{
+    margin-top:9px;
+    font-size:13px;
+    line-height:1.9;
+    color:#71817b;
+}
+
+.info b{
+    color:#435c52;
+}
+
+.phone{
+    color:#07583f;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+.card-actions{
+    display:flex;
+    gap:7px;
+    margin-top:10px;
+    flex-wrap:wrap;
+}
+
+.small-btn{
+    border:0;
+    border-radius:9px;
+    padding:8px 11px;
+    font-size:12px;
+    cursor:pointer;
+}
+
+.call{
+    background:#e7f5ed;
+    color:#07583f;
+}
+
+.edit{
+    background:#edf4ff;
+    color:#17608c;
+}
+
+.delete{
+    background:#fff0f0;
+    color:#b33a3a;
 }
 
 .empty{
-  text-align:center;
-  padding:25px 10px;
-  color:#7c8c85;
-  font-size:13px;
+    text-align:center;
+    padding:40px 15px;
+    color:#7c8c85;
+    background:white;
+    border-radius:18px;
+    border:1px dashed #cbded5;
+    line-height:1.8;
 }
 
-/* STATS */
-.stat-box{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-  margin-top:12px;
+.footer{
+    text-align:center;
+    color:#94a29d;
+    font-size:11px;
+    padding:15px 0 20px;
 }
 
-.stat{
-  background:#f0f8f4;
-  padding:15px;
-  border-radius:15px;
-  text-align:center;
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.55);
+    z-index:100;
+    align-items:flex-end;
+    justify-content:center;
 }
 
-.stat strong{
-  display:block;
-  font-size:22px;
-  color:#07583f;
+.modal.show{
+    display:flex;
 }
 
-.info-box{
-  background:#f0f8f4;
-  padding:15px;
-  border-radius:15px;
-  line-height:1.8;
-  font-size:13px;
-  margin-bottom:10px;
+.modal-box{
+    width:100%;
+    max-width:480px;
+    max-height:94vh;
+    overflow:auto;
+    background:white;
+    border-radius:28px 28px 0 0;
+    padding:20px 17px 30px;
 }
 
-/* ATTENDANCE */
-.attendance-row{
-  background:white;
-  border:1px solid #dfebe5;
-  border-radius:15px;
-  padding:12px;
-  margin-bottom:9px;
+.modal-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:16px;
 }
 
-.attendance-name{
-  color:#07583f;
-  font-weight:bold;
-  margin-bottom:8px;
+.modal-head h3{
+    color:#07583f;
+    font-size:20px;
 }
 
-.attendance-select{
-  width:100%;
-  padding:10px;
-  border:1px solid #d9e7e0;
-  border-radius:10px;
-  background:#fbfdfc;
+.close{
+    border:0;
+    background:#edf5f1;
+    color:#07583f;
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    font-size:22px;
+    cursor:pointer;
 }
 
-/* RESPONSIVE */
+.group{
+    margin-bottom:13px;
+}
+
+.group label{
+    display:block;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:5px;
+}
+
+.group input,
+.group textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #d7e7df;
+    border-radius:12px;
+    background:#fbfdfc;
+    font-size:14px;
+    outline:none;
+}
+
+.group textarea{
+    min-height:80px;
+    resize:vertical;
+}
+
+.save-btn{
+    width:100%;
+    border:0;
+    background:#07583f;
+    color:white;
+    padding:14px;
+    border-radius:13px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.cancel-btn{
+    width:100%;
+    border:0;
+    background:#eaf5ef;
+    color:#07583f;
+    padding:13px;
+    border-radius:13px;
+    font-size:14px;
+    margin-top:9px;
+    cursor:pointer;
+}
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message{
+    position:fixed;
+    left:50%;
+    bottom:25px;
+    transform:translateX(-50%);
+    background:#17382d;
+    color:white;
+    padding:11px 17px;
+    border-radius:12px;
+    font-size:13px;
+    z-index:300;
+    display:none;
+    white-space:nowrap;
+}
+
+.message.show{
+    display:block;
+}
+
+/* =========================
+   SMALL SCREEN
+========================= */
+
 @media(max-width:360px){
-  .brand h1{
-    font-size:21px;
-  }
 
-  .welcome h2{
-    font-size:16px;
-  }
+    .brand h1{
+        font-size:22px;
+    }
 
-  .content{
-    padding-left:11px;
-    padding-right:11px;
-  }
+    .header-title h2{
+        font-size:18px;
+    }
+
+    .content{
+        padding-left:11px;
+        padding-right:11px;
+    }
+
 }
+
 </style>
 </head>
 
@@ -556,697 +394,851 @@ button,input,textarea,select{
 
 <div class="app">
 
-<!-- HEADER -->
+<!-- =========================
+     HEADER
+========================= -->
+
 <header class="header">
 
-  <div class="top">
+    <div class="top">
 
-    <button class="icon-btn" type="button" onclick="openMenu()">☰</button>
+        <div class="logo">
+            📖
+        </div>
 
-    <div class="brand">
-      <h1>Hifz<span>Connect</span></h1>
-      <p>হেফজ গার্ডিয়ান</p>
+        <div class="brand">
+            <h1>হেফজ<span>কন্টাক</span></h1>
+            <p>সহজ যোগাযোগ</p>
+        </div>
+
     </div>
 
-    <button class="icon-btn" type="button" onclick="showPage('notice')">🔔</button>
+    <div class="header-title">
 
-  </div>
+        <small>আসসালামু আলাইকুম</small>
 
-  <div class="welcome">
-    <small>আসসালামু আলাইকুম</small>
-    <h2>ওস্তাদ হাফেজ মোহাম্মদ মাহমুদ সাহেব</h2>
-  </div>
+        <h2>
+            শিক্ষার্থীদের যোগাযোগের তথ্য
+        </h2>
+
+    </div>
 
 </header>
 
 
-<!-- HOME -->
-<main id="home" class="page active content">
-
-  <div class="section-head">
-    <h3>আজকের সারাংশ</h3>
-    <span class="date" id="today"></span>
-  </div>
-
-  <div class="summary">
-
-    <div class="card">
-      <div class="emoji">👨‍🎓</div>
-      <strong id="totalStudents">0</strong>
-      <span>মোট ছাত্র</span>
-    </div>
-
-    <div class="card">
-      <div class="emoji">✅</div>
-      <strong id="presentCount">0</strong>
-      <span>উপস্থিত</span>
-    </div>
-
-    <div class="card">
-      <div class="emoji">📖</div>
-      <strong id="progressCount">0</strong>
-      <span>পড়া হয়েছে</span>
-    </div>
-
-  </div>
-
-  <h3 class="quick">দ্রুত কাজ</h3>
-
-  <div class="grid">
-
-    <div class="menu" onclick="openStudentManager()">
-      <div class="menu-icon">👨‍🎓</div>
-      <h4>শিক্ষার্থী</h4>
-      <p>ছাত্র যোগ ও তথ্য দেখুন</p>
-    </div>
-
-    <div class="menu" onclick="openAttendance()">
-      <div class="menu-icon">✅</div>
-      <h4>উপস্থিতি</h4>
-      <p>আজকের হাজিরা দিন</p>
-    </div>
-
-    <div class="menu" onclick="openHifz()">
-      <div class="menu-icon">📚</div>
-      <h4>হিফজ অগ্রগতি</h4>
-      <p>সবক ও দৌরের অগ্রগতি</p>
-    </div>
-
-    <div class="menu" onclick="openParents()">
-      <div class="menu-icon">👨‍👩‍👦</div>
-      <h4>অভিভাবক</h4>
-      <p>অভিভাবকের তথ্য</p>
-    </div>
-
-    <div class="menu" onclick="openReport()">
-      <div class="menu-icon">📊</div>
-      <h4>রিপোর্ট</h4>
-      <p>দৈনিক ও মাসিক রিপোর্ট</p>
-    </div>
-
-    <div class="menu" onclick="openIslamic()">
-      <div class="menu-icon">🕌</div>
-      <h4>ইসলামিক বিভাগ</h4>
-      <p>দোয়া, হাদিস ও আমল</p>
-    </div>
-
-    <div class="menu" onclick="openCalendar()">
-      <div class="menu-icon">📅</div>
-      <h4>ক্যালেন্ডার</h4>
-      <p>তারিখ ও অনুষ্ঠান</p>
-    </div>
-
-    <div class="menu" onclick="openSettings()">
-      <div class="menu-icon">⚙️</div>
-      <h4>সেটিংস</h4>
-      <p>অ্যাপের সেটিংস</p>
-    </div>
-
-  </div>
-
-  <div class="progress">
-
-    <div class="progress-head">
-      <span>আজকের উপস্থিতি</span>
-      <strong id="progressPercent">0%</strong>
-    </div>
-
-    <div class="bar">
-      <div class="fill" id="progressBar"></div>
-    </div>
-
-  </div>
-
-  <div class="notice">
-    <b>🔔 গুরুত্বপূর্ণ নোটিশ</b>
-    <p>
-      আজকের সবক ও দৌর সম্পন্ন করার পর
-      শিক্ষার্থীদের অগ্রগতি আপডেট করুন।
-    </p>
-  </div>
-
-</main>
-
-
-<!-- NOTICE PAGE -->
-<main id="notice" class="page content">
-
-  <div class="section-head">
-    <h3>📢 নোটিশ</h3>
-  </div>
-
-  <div class="info-box">
-    বর্তমানে কোনো নতুন নোটিশ নেই।
-  </div>
-
-</main>
-
-
-<!-- REPORT PAGE -->
-<main id="report" class="page content">
-
-  <div class="section-head">
-    <h3>📊 রিপোর্ট</h3>
-  </div>
-
-  <div class="stat-box">
-
-    <div class="stat">
-      <strong id="reportStudents">0</strong>
-      মোট শিক্ষার্থী
-    </div>
-
-    <div class="stat">
-      <strong id="reportPresent">0</strong>
-      আজ উপস্থিত
-    </div>
-
-  </div>
-
-  <div class="info-box" style="margin-top:12px">
-    এই রিপোর্টের তথ্য আপনার ফোনে অফলাইনে সংরক্ষিত থাকবে।
-  </div>
-
-</main>
-
-
-<!-- SETTINGS PAGE -->
-<main id="settings" class="page content">
-
-  <div class="section-head">
-    <h3>⚙️ সেটিংস</h3>
-  </div>
-
-  <div class="info-box">
-    <b>অ্যাপ:</b> HifzConnect<br>
-    <b>ধরণ:</b> Offline First<br>
-    <b>ওস্তাদ:</b> হাফেজ মোহাম্মদ মাহমুদ সাহেব
-  </div>
-
-  <button class="save-btn" type="button" onclick="backupData()">
-    💾 ডেটা ব্যাকআপ
-  </button>
-
-  <button class="save-btn secondary" type="button" onclick="clearAllData()">
-    ⚠️ সব ডেটা মুছে ফেলুন
-  </button>
-
-</main>
-
-
-<!-- BOTTOM NAV -->
-<nav class="bottom">
-
-  <div class="nav active" onclick="nav(this,'home')">
-    <span class="nav-icon">🏠</span>
-    হোম
-  </div>
-
-  <div class="nav" onclick="nav(this,'notice')">
-    <span class="nav-icon">🔔</span>
-    নোটিশ
-  </div>
-
-  <div class="nav" onclick="nav(this,'report')">
-    <span class="nav-icon">📊</span>
-    রিপোর্ট
-  </div>
-
-  <div class="nav" onclick="nav(this,'settings')">
-    <span class="nav-icon">⚙️</span>
-    সেটিংস
-  </div>
-
-</nav>
-
-</div>
-
-
 <!-- =========================
-     STUDENT MODAL
+     MAIN
 ========================= -->
 
-<div class="modal" id="studentModal">
-
-  <div class="modal-box">
-
-    <div class="modal-title">
-      <h3>👨‍🎓 শিক্ষার্থী</h3>
-      <button class="close" type="button" onclick="closeModal('studentModal')">×</button>
-    </div>
-
-    <button class="save-btn" type="button" onclick="showStudentForm()">
-      ➕ শিক্ষার্থী যোগ করুন
-    </button>
-
-    <br><br>
+<main class="content">
 
     <input
-      class="search"
-      id="studentSearch"
-      type="text"
-      placeholder="🔍 শিক্ষার্থীর নাম খুঁজুন..."
-      oninput="renderStudents()"
+        id="search"
+        class="search"
+        type="search"
+        placeholder="🔍 শিক্ষার্থীর নাম খুঁজুন..."
+        oninput="renderStudents()"
     >
 
-    <div class="student-list" id="studentList"></div>
+    <button
+        class="add-btn"
+        onclick="openAddStudent()"
+    >
+        ➕ নতুন ছাত্র যোগ করুন
+    </button>
 
-  </div>
+    <div
+        id="studentCount"
+        class="count"
+    >
+        মোট শিক্ষার্থী: ০ জন
+    </div>
+
+    <div id="studentList"></div>
+
+    <div class="footer">
+        হেফজ কন্টাক • সহজ যোগাযোগ • অফলাইন
+    </div>
+
+</main>
 
 </div>
 
 
 <!-- =========================
-     STUDENT FORM MODAL
+     ADD / EDIT STUDENT MODAL
 ========================= -->
 
-<div class="modal" id="studentFormModal">
+<div
+    id="studentModal"
+    class="modal"
+>
 
-  <div class="modal-box">
+    <div class="modal-box">
 
-    <div class="modal-title">
-      <h3 id="formTitle">➕ শিক্ষার্থী যোগ করুন</h3>
-      <button class="close" type="button" onclick="closeModal('studentFormModal')">×</button>
+        <div class="modal-head">
+
+            <h3 id="modalTitle">
+                ➕ নতুন ছাত্র যোগ করুন
+            </h3>
+
+            <button
+                class="close"
+                onclick="closeStudentModal()"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <form id="studentForm">
+
+            <input
+                type="hidden"
+                id="studentId"
+            >
+
+
+            <div class="group">
+
+                <label>
+                    ছাত্রের নাম *
+                </label>
+
+                <input
+                    type="text"
+                    id="studentName"
+                    placeholder="ছাত্রের পূর্ণ নাম"
+                    required
+                >
+
+            </div>
+
+
+            <div class="group">
+
+                <label>
+                    বাবার নাম
+                </label>
+
+                <input
+                    type="text"
+                    id="fatherName"
+                    placeholder="বাবার নাম"
+                >
+
+            </div>
+
+
+            <div class="group">
+
+                <label>
+                    মোবাইল নম্বর *
+                </label>
+
+                <input
+                    type="tel"
+                    id="phoneNumber"
+                    placeholder="01XXXXXXXXX"
+                    required
+                >
+
+            </div>
+
+
+            <div class="group">
+
+                <label>
+                    ঠিকানা
+                </label>
+
+                <textarea
+                    id="studentAddress"
+                    placeholder="গ্রাম, পোস্ট, থানা, জেলা"
+                ></textarea>
+
+            </div>
+
+
+            <button
+                class="save-btn"
+                type="submit"
+            >
+                💾 তথ্য সংরক্ষণ করুন
+            </button>
+
+
+            <button
+                class="cancel-btn"
+                type="button"
+                onclick="closeStudentModal()"
+            >
+                বাতিল
+            </button>
+
+        </form>
+
     </div>
 
-    <form id="studentForm">
-
-      <input type="hidden" id="studentId">
-
-      <div class="form-group">
-        <label for="studentName">শিক্ষার্থীর নাম *</label>
-        <input id="studentName" type="text" required>
-      </div>
-
-      <div class="form-group">
-        <label for="fatherName">পিতার নাম</label>
-        <input id="fatherName" type="text">
-      </div>
-
-      <div class="form-group">
-        <label for="guardianPhone">অভিভাবকের মোবাইল নম্বর</label>
-        <input id="guardianPhone" type="tel">
-      </div>
-
-      <div class="form-group">
-        <label for="studentAge">বয়স</label>
-        <input id="studentAge" type="number" min="1">
-      </div>
-
-      <div class="form-group">
-        <label for="hifzLevel">কত পারা/সূরা পর্যন্ত হিফজ হয়েছে</label>
-        <input
-          id="hifzLevel"
-          type="text"
-          placeholder="যেমন: ৫ পারা / সূরা বাকারাহ"
-        >
-      </div>
-
-      <div class="form-group">
-        <label for="admissionDate">ভর্তির তারিখ</label>
-        <input id="admissionDate" type="date">
-      </div>
-
-      <div class="form-group">
-        <label for="address">ঠিকানা</label>
-        <textarea id="address"></textarea>
-      </div>
-
-      <div class="form-group">
-        <label for="otherInfo">অন্যান্য তথ্য</label>
-        <textarea id="otherInfo"></textarea>
-      </div>
-
-      <button class="save-btn" type="submit">
-        💾 সংরক্ষণ করুন
-      </button>
-
-    </form>
-
-  </div>
-
 </div>
+
+
+<!-- =========================
+     MESSAGE
+========================= -->
+
+<div
+    id="message"
+    class="message"
+></div>
 
 
 <script>
 
-/* =====================================
-   HIFZCONNECT - MAIN JAVASCRIPT
-===================================== */
+/* =========================
+   DATA
+========================= */
 
-
-/* ---------- DATA ---------- */
+const STORAGE_KEY = "hefz_contact_students";
 
 let students = [];
 
-let attendance = {};
 
+/* =========================
+   LOAD DATA
+========================= */
 
-/* ---------- LOAD DATA ---------- */
+function loadStudents(){
 
-function loadData(){
+    try{
 
-  try{
-    students = JSON.parse(
-      localStorage.getItem("hifz_students") || "[]"
-    );
+        const saved =
+            localStorage.getItem(STORAGE_KEY);
 
-    attendance = JSON.parse(
-      localStorage.getItem("hifz_attendance") || "{}"
-    );
+        students =
+            saved ? JSON.parse(saved) : [];
 
-    if(!Array.isArray(students)){
-      students = [];
+        if(!Array.isArray(students)){
+            students = [];
+        }
+
+    }catch(error){
+
+        students = [];
+
     }
 
-    if(typeof attendance !== "object" || attendance === null){
-      attendance = {};
-    }
-
-  }catch(error){
-
-    console.error("ডেটা লোড সমস্যা:",error);
-
-    students = [];
-    attendance = {};
-
-  }
-
+    renderStudents();
 }
 
 
-/* ---------- SAVE DATA ---------- */
+/* =========================
+   SAVE DATA
+========================= */
 
 function saveStudents(){
 
-  localStorage.setItem(
-    "hifz_students",
-    JSON.stringify(students)
-  );
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(students)
+    );
 
-  updateDashboard();
-
+    renderStudents();
 }
 
 
-function saveAttendance(){
+/* =========================
+   BANGLA NUMBER
+========================= */
 
-  localStorage.setItem(
-    "hifz_attendance",
-    JSON.stringify(attendance)
-  );
+function banglaNumber(number){
 
-  updateDashboard();
+    return String(number).replace(
+        /\d/g,
+        function(digit){
 
-}
+            return "০১২৩৪৫৬৭৮৯"[digit];
 
-
-/* ---------- DATE ---------- */
-
-function getToday(){
-
-  let d = new Date();
-
-  let year = d.getFullYear();
-
-  let month = String(d.getMonth()+1).padStart(2,"0");
-
-  let day = String(d.getDate()).padStart(2,"0");
-
-  return year + "-" + month + "-" + day;
-
-}
-
-
-function showToday(){
-
-  let today = document.getElementById("today");
-
-  if(today){
-
-    today.innerText =
-      new Date().toLocaleDateString(
-        "bn-BD",
-        {
-          year:"numeric",
-          month:"long",
-          day:"numeric"
         }
-      );
-
-  }
+    );
 
 }
 
 
-/* ---------- PAGE NAVIGATION ---------- */
+/* =========================
+   HTML SECURITY
+========================= */
 
-function nav(element,page){
+function escapeHTML(value){
 
-  document.querySelectorAll(".nav")
-    .forEach(function(item){
-      item.classList.remove("active");
-    });
+    return String(value || "").replace(
+        /[&<>"']/g,
+        function(character){
 
-  if(element){
-    element.classList.add("active");
-  }
+            const map = {
 
-  showPage(page);
+                "&":"&amp;",
+                "<":"&lt;",
+                ">":"&gt;",
+                '"':"&quot;",
+                "'":"&#039;"
 
-}
+            };
 
+            return map[character];
 
-function showPage(page){
-
-  document.querySelectorAll(".page")
-    .forEach(function(item){
-      item.classList.remove("active");
-    });
-
-  let target = document.getElementById(page);
-
-  if(target){
-    target.classList.add("active");
-  }
-
-  window.scrollTo(0,0);
+        }
+    );
 
 }
 
 
-/* ---------- MODAL ---------- */
+/* =========================
+   SHOW STUDENTS
+========================= */
 
-function openModal(id){
+function renderStudents(){
 
-  let modal = document.getElementById(id);
+    const list =
+        document.getElementById("studentList");
 
-  if(modal){
-    modal.classList.add("show");
-  }
+    const searchInput =
+        document.getElementById("search");
 
-}
-
-
-function closeModal(id){
-
-  let modal = document.getElementById(id);
-
-  if(modal){
-    modal.classList.remove("show");
-  }
-
-}
+    const search =
+        (searchInput.value || "")
+        .trim()
+        .toLowerCase();
 
 
-/* ---------- STUDENT MANAGER ---------- */
+    const filtered =
+        students.filter(function(student){
 
-function openStudentManager(){
+            const name =
+                (student.name || "")
+                .toLowerCase();
 
-  let search = document.getElementById("studentSearch");
+            const father =
+                (student.father || "")
+                .toLowerCase();
 
-  if(search){
-    search.value = "";
-  }
+            const phone =
+                (student.phone || "");
 
-  openModal("studentModal");
+            return (
+                name.includes(search) ||
+                father.includes(search) ||
+                phone.includes(search)
+            );
 
-  renderStudents();
-
-}
-
-
-/* ---------- NEW STUDENT FORM ---------- */
-
-function showStudentForm(){
-
-  let form = document.getElementById("studentForm");
-
-  if(form){
-    form.reset();
-  }
-
-  document.getElementById("studentId").value = "";
-
-  document.getElementById("formTitle").innerText =
-    "➕ শিক্ষার্থী যোগ করুন";
-
-  closeModal("studentModal");
-
-  openModal("studentFormModal");
-
-}
-
-
-/* ---------- SAVE STUDENT ---------- */
-
-document.getElementById("studentForm")
-  .addEventListener("submit",function(event){
-
-    event.preventDefault();
-
-    let name =
-      document.getElementById("studentName")
-        .value.trim();
-
-    if(!name){
-
-      alert("শিক্ষার্থীর নাম লিখুন।");
-
-      return;
-
-    }
-
-    let id =
-      document.getElementById("studentId").value;
-
-    let student = {
-
-      id: id || String(Date.now()),
-
-      name: name,
-
-      father:
-        document.getElementById("fatherName")
-          .value.trim(),
-
-      phone:
-        document.getElementById("guardianPhone")
-          .value.trim(),
-
-      age:
-        document.getElementById("studentAge")
-          .value,
-
-      hifz:
-        document.getElementById("hifzLevel")
-          .value.trim(),
-
-      admission:
-        document.getElementById("admissionDate")
-          .value,
-
-      address:
-        document.getElementById("address")
-          .value.trim(),
-
-      other:
-        document.getElementById("otherInfo")
-          .value.trim()
-
-    };
-
-
-    if(id){
-
-      let index =
-        students.findIndex(function(item){
-          return item.id === id;
         });
 
-      if(index !== -1){
 
-        students[index] = student;
+    document.getElementById(
+        "studentCount"
+    ).textContent =
+        "মোট শিক্ষার্থী: "
+        + banglaNumber(students.length)
+        + " জন";
 
-      }
 
-    }else{
+    if(filtered.length === 0){
 
-      students.push(student);
+        list.innerHTML = `
+            <div class="empty">
+                এখনো কোনো শিক্ষার্থী যোগ করা হয়নি।
+                <br>
+                উপরের “নতুন ছাত্র যোগ করুন” বাটনে চাপুন।
+            </div>
+        `;
+
+        return;
 
     }
+
+
+    list.innerHTML =
+        filtered.map(function(student){
+
+            return `
+
+                <div class="student">
+
+                    <div class="student-head">
+
+                        <div class="avatar">
+                            👨‍🎓
+                        </div>
+
+                        <div class="student-name">
+                            ${escapeHTML(student.name)}
+                        </div>
+
+                    </div>
+
+
+                    <div class="info">
+
+                        <b>বাবার নাম:</b>
+                        ${escapeHTML(
+                            student.father || "দেওয়া হয়নি"
+                        )}
+
+                        <br>
+
+                        <b>মোবাইল:</b>
+
+                        <a
+                            class="phone"
+                            href="tel:${escapeHTML(student.phone)}"
+                        >
+                            ${escapeHTML(student.phone)}
+                        </a>
+
+                        <br>
+
+                        <b>ঠিকানা:</b>
+                        ${escapeHTML(
+                            student.address || "দেওয়া হয়নি"
+                        )}
+
+                    </div>
+
+
+                    <div class="card-actions">
+
+                        <button
+                            class="small-btn call"
+                            onclick="callStudent('${student.id}')"
+                        >
+                            📞 কল
+                        </button>
+
+
+                        <button
+                            class="small-btn edit"
+                            onclick="editStudent('${student.id}')"
+                        >
+                            ✏️ পরিবর্তন
+                        </button>
+
+
+                        <button
+                            class="small-btn delete"
+                            onclick="deleteStudent('${student.id}')"
+                        >
+                            🗑️ মুছুন
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }).join("");
+
+}
+
+
+/* =========================
+   OPEN ADD FORM
+========================= */
+
+function openAddStudent(){
+
+    document.getElementById(
+        "studentForm"
+    ).reset();
+
+    document.getElementById(
+        "studentId"
+    ).value = "";
+
+
+    document.getElementById(
+        "modalTitle"
+    ).textContent =
+        "➕ নতুন ছাত্র যোগ করুন";
+
+
+    document.getElementById(
+        "studentModal"
+    ).classList.add("show");
+
+
+    setTimeout(function(){
+
+        document.getElementById(
+            "studentName"
+        ).focus();
+
+    },100);
+
+}
+
+
+/* =========================
+   CLOSE FORM
+========================= */
+
+function closeStudentModal(){
+
+    document.getElementById(
+        "studentModal"
+    ).classList.remove("show");
+
+}
+
+
+/* =========================
+   SAVE STUDENT
+========================= */
+
+document.getElementById(
+    "studentForm"
+).addEventListener(
+    "submit",
+    function(event){
+
+        event.preventDefault();
+
+
+        const id =
+            document.getElementById(
+                "studentId"
+            ).value;
+
+
+        const name =
+            document.getElementById(
+                "studentName"
+            ).value.trim();
+
+
+        const father =
+            document.getElementById(
+                "fatherName"
+            ).value.trim();
+
+
+        const phone =
+            document.getElementById(
+                "phoneNumber"
+            ).value.trim();
+
+
+        const address =
+            document.getElementById(
+                "studentAddress"
+            ).value.trim();
+
+
+        if(!name){
+
+            alert(
+                "দয়া করে ছাত্রের নাম লিখুন।"
+            );
+
+            return;
+
+        }
+
+
+        if(!phone){
+
+            alert(
+                "দয়া করে মোবাইল নম্বর লিখুন।"
+            );
+
+            return;
+
+        }
+
+
+        const student = {
+
+            id:
+                id ||
+                Date.now().toString(),
+
+            name:name,
+
+            father:father,
+
+            phone:phone,
+
+            address:address
+
+        };
+
+
+        /* EDIT */
+
+        if(id){
+
+            const index =
+                students.findIndex(
+                    function(item){
+
+                        return item.id === id;
+
+                    }
+                );
+
+
+            if(index !== -1){
+
+                students[index] =
+                    student;
+
+            }
+
+
+            saveStudents();
+
+            closeStudentModal();
+
+            showMessage(
+                "শিক্ষার্থীর তথ্য পরিবর্তন হয়েছে"
+            );
+
+        }
+
+
+        /* NEW STUDENT */
+
+        else{
+
+            students.unshift(student);
+
+            saveStudents();
+
+            closeStudentModal();
+
+            showMessage(
+                "শিক্ষার্থী সফলভাবে সংরক্ষণ হয়েছে"
+            );
+
+        }
+
+    }
+);
+
+
+/* =========================
+   EDIT STUDENT
+========================= */
+
+function editStudent(id){
+
+    const student =
+        students.find(
+            function(item){
+
+                return item.id === id;
+
+            }
+        );
+
+
+    if(!student){
+
+        return;
+
+    }
+
+
+    document.getElementById(
+        "studentId"
+    ).value =
+        student.id;
+
+
+    document.getElementById(
+        "studentName"
+    ).value =
+        student.name || "";
+
+
+    document.getElementById(
+        "fatherName"
+    ).value =
+        student.father || "";
+
+
+    document.getElementById(
+        "phoneNumber"
+    ).value =
+        student.phone || "";
+
+
+    document.getElementById(
+        "studentAddress"
+    ).value =
+        student.address || "";
+
+
+    document.getElementById(
+        "modalTitle"
+    ).textContent =
+        "✏️ শিক্ষার্থীর তথ্য পরিবর্তন";
+
+
+    document.getElementById(
+        "studentModal"
+    ).classList.add("show");
+
+}
+
+
+/* =========================
+   DELETE STUDENT
+========================= */
+
+function deleteStudent(id){
+
+    const student =
+        students.find(
+            function(item){
+
+                return item.id === id;
+
+            }
+        );
+
+
+    if(!student){
+
+        return;
+
+    }
+
+
+    const confirmed =
+        confirm(
+            "“"
+            + student.name
+            + "” এর তথ্য মুছে ফেলতে চান?"
+        );
+
+
+    if(!confirmed){
+
+        return;
+
+    }
+
+
+    students =
+        students.filter(
+            function(item){
+
+                return item.id !== id;
+
+            }
+        );
 
 
     saveStudents();
 
-    closeModal("studentFormModal");
+    showMessage(
+        "শিক্ষার্থীর তথ্য মুছে ফেলা হয়েছে"
+    );
 
-    openStudentManager();
-
-    alert("শিক্ষার্থীর তথ্য সফলভাবে সংরক্ষণ হয়েছে।");
-
-  });
+}
 
 
-/* ---------- SHOW STUDENTS ---------- */
+/* =========================
+   CALL STUDENT
+========================= */
 
-function renderStudents(){
+function callStudent(id){
 
-  let list =
-    document.getElementById("studentList");
+    const student =
+        students.find(
+            function(item){
 
-  if(!list){
-    return;
-  }
+                return item.id === id;
 
-  let searchInput =
-    document.getElementById("studentSearch");
-
-  let search =
-    searchInput
-      ? searchInput.value.trim().toLowerCase()
-      : "";
+            }
+        );
 
 
-  let filtered =
-    students.filter(function(student){
+    if(
+        student &&
+        student.phone
+    ){
 
-      return String(student.name || "")
-        .toLowerCase()
-        .includes(search);
+        window.location.href =
+            "tel:" + student.phone;
 
-    });
+    }
 
-
-  if(filtered.length === 0){
-
-    list.innerHTML =
-      '<div class="empty">' +
-      'কোনো শিক্ষার্থী পাওয়া যায়নি।<br><br>' +
-      'উপরের “শিক্ষার্থী যোগ করুন” বাটনে চাপুন।' +
-      '</div>';
-
-    return;
-
-  }
+}
 
 
-  list.innerHTML =
-    filtered.map(function(student){
+/* =========================
+   MESSAGE
+========================= */
 
-      return `
+function showMessage(text){
 
-        <div class="student">
+    const message =
+        document.getElementById(
+            "message"
+        );
 
-          <div class="student-head">
 
-            <div class="student-name">
-              ${escapeHTML(student.name)}
-            </div>
+    message.textContent = text;
 
-          </div>
+    message.classList.add("show");
 
-          <div class="student-info">
 
-            পিতা:
-            ${escapeHT
+    setTimeout(function(){
+
+        message.classList.remove(
+            "show"
+        );
+
+    },2000);
+
+}
+
+
+/* =========================
+   CLOSE MODAL BY OUTSIDE TAP
+========================= */
+
+document.getElementById(
+    "studentModal"
+).addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target ===
+            document.getElementById(
+                "studentModal"
+            )
+        ){
+
+            closeStudentModal();
+
+        }
+
+    }
+);
+
+
+/* =========================
+   START APP
+========================= */
+
+loadStudents();
+
+</script>
+
+</body>
+  </html>
