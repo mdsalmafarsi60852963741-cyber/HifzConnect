@@ -4,7 +4,7 @@ const APP_FILES = [
   "./",
   "./index.html",
   "./manifest.json",
-  "./icon.png"
+ "./file_00000000485c8211bf81374240c59fe9.png" 
 ];
 
 self.addEventListener("install", (event) => {
