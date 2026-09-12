@@ -1,15 +1,22 @@
 {
-  "name": "হেফজ কন্টাক",
+  "name": "হেফজ কন্টাক — সহজ যোগাযোগ",
   "short_name": "হেফজ কন্টাক",
-  "description": "ছাত্রদের যোগাযোগের তথ্য সংরক্ষণের সহজ অ্যাপ",
+  "description": "হেফজ শিক্ষার্থীদের যোগাযোগের তথ্য সংরক্ষণের সহজ অ্যাপ",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#f5fffa",
-  "theme_color": "#07583f",
   "orientation": "portrait",
+  "background_color": "#f8fcfa",
+  "theme_color": "#07583f",
+  "lang": "bn",
   "icons": [
     {
-      "src": "file_00000000485c8211bf81374240c59fe9.png",
+      "src": "./file_00000000485c8211bf81374240c59fe9.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./file_00000000485c8211bf81374240c59fe9.png",
       "sizes": "512x512",
       "type": "image/png"
     }
